@@ -21,11 +21,20 @@
     a[href*=uploadWizard]:hover {  text-decoration: none; }
     td:last-child { text-align: center; }
     acronym { text-decoration: none; cursor: help; border-bottom: 1px dotted #666; }
+    details > p { margin-left: 0.5em; }
   </style>
 </head>
 
 <body>
   <p>Lista de áreas protegidas de Portugal, por distrito.</p>
+  <p>Por fazer:</p>
+  <ul>
+    <li>
+      Mover entradas de "outros" para os distritos correspondentes
+      (tipicamente mais que um; ver p.ex. "Serra da Malcata" que aparece em Guarda e Castelo Branco)
+    </li>
+    <li>Importar as tabelas dos Açores e da Madeira.</li>
+  </ul>
   <div id="continente">
     <h2>Continente</h2>
     <details><summary><h3>Aveiro</h3></summary>
@@ -1890,14 +1899,20 @@
   <div id="ilhas">
     <h2>Ilhas</h2>
     <details><summary><h3>Madeira</h3></summary>
-      Ver artigo&#32;principal: <a href="https://pt.wikipedia.org/wiki/%C3%81reas_protegidas_da_Regi%C3%A3o_Aut%C3%B3noma_da_Madeira">
-        Áreas protegidas da Região Autónoma da Madeira
-      </a>
+      <p>
+        Ver artigo principal:
+        <a href="https://pt.wikipedia.org/wiki/%C3%81reas_protegidas_da_Regi%C3%A3o_Aut%C3%B3noma_da_Madeira">
+          Áreas protegidas da Região Autónoma da Madeira
+        </a>
+      </p>
     </details>
     <details><summary><h3>Açores</h3></summary>
-      Ver artigo&#32;principal: <a href="https://pt.wikipedia.org/wiki/%C3%81reas_protegidas_da_Regi%C3%A3o_Aut%C3%B3noma_dos_A%C3%A7ores">
-        Áreas protegidas da Região Autónoma dos Açores
-      </a>
+      <p>
+        Ver artigo principal:
+        <a href="https://pt.wikipedia.org/wiki/%C3%81reas_protegidas_da_Regi%C3%A3o_Aut%C3%B3noma_dos_A%C3%A7ores">
+          Áreas protegidas da Região Autónoma dos Açores
+        </a>
+      </p>
     </details>
   </div>
 </body>
