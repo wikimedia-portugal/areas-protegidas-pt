@@ -1,199 +1,1905 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>Lista colapsável das freguesias de Portugal</title>
   <style>
     body { line-height: 1.5em; font-family: sans-serif; font-weight: 300; }
-    details, details>table { margin-left: 1em; }
+    details { margin-left: 1em; }
     summary:focus { outline: none; }
-    summary { cursor: pointer; }
-    details details { background: rgba(100, 200, 255, 0.1); }
-    details { border-left: 1px solid slategray;  margin-top: 0.5em; margin-bottom: 0.5em; padding-left: 0.5em }
-    table { border-collapse: collapse; margin-top: 0.5em; margin-bottom: 0.5em; }
-    th, td { padding-left: .5em; padding-right: 1em; text-align: left; }
-    th, thead, tfoot { background: #eee; font-weight: bold; }
-    th, td { border: 1px solid #999; }
+    summary { cursor: pointer; background: #c2dde8; padding-left: 0.5em; }
+    summary > h3 { display: inline-block; margin: 0.2em 0; }
+    details { border-left: 1px solid slategray; margin-top: 0.5em; margin-bottom: 0.5em; background: rgba(100, 200, 255, 0.1); }
+    table { border-collapse: collapse; margin: 0.5em; width: calc(100% - 0.5em); }
+    th, td { padding-left: .5em; padding-right: 1em; text-align: left; border: 1px solid #999; }
+    th { background: #eee; font-weight: bold; }
     td { background: white; }
-    .demo-content { width: 30em; height: 5em; background: #ccc; margin: 0.5em 1em; }
+    a { color: RoyalBlue; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a[href*=uploadWizard] { font-size: 2em; }
+    a[href*=uploadWizard]:hover {  text-decoration: none; }
+    td:last-child { text-align: center; }
+    acronym { text-decoration: none; cursor: help; border-bottom: 1px dotted #666; }
   </style>
 </head>
+
 <body>
-  <p>Esta é uma lista colapsável das subdivisões administrativas de Portugal.</p>
-  <p>
-    A interação de expandir/colapsar é implementada inteiramente com base no elemento <code>&lt;details&gt;</code>,
-    sem recurso a JavaScript.
-  </p>
-  <details open="true"><summary>Continente</summary>
-    <details><summary>Aveiro</summary>
-      <details><summary>Águeda</summary>
-        <details><summary>Aguada de Cima</summary>
-          <table>
-            <tr>
-              <th>Foo</th>
-              <th>Bar</th>
-              <th>Baz</th>
-            </tr>
-            <tr>
-              <td>Foo</td>
-              <td>Bar</td>
-              <td>Baz</td>
-            </tr>
-          </table>
-        </details>
-        <details><summary>Águeda e Borralha</summary><div class="demo-content"/></details>
-        <details><summary>Barrô e Aguada de Baixo</summary><div class="demo-content"/></details>
-        <details><summary>Belazaima do Chão, Castanheira do Vouga e Agadão</summary><div class="demo-content"/></details>
-        <details><summary>Fermentelos</summary><div class="demo-content"/></details>
-        <details><summary>Macinhata do Vouga</summary><div class="demo-content"/></details>
-        <details><summary>Préstimo e Macieira de Alcoba</summary><div class="demo-content"/></details>
-        <details><summary>Recardães e Espinhel</summary><div class="demo-content"/></details>
-        <details><summary>Travassô e Óis da Ribeira</summary><div class="demo-content"/></details>
-        <details><summary>Trofa, Segadães e Lamas do Vouga</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Anadia</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Arouca</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Aveiro</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Castelo de Paiva</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Espinho</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Estarreja</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Ílhavo</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Mealhada</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Murtosa</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Oliveira de Azeméis</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Oliveira do Bairro</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Ovar</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Santa Maria da Feira</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>São João da Madeira</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Sever do Vouga</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Vagos</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
-      <details>
-        <summary>Vale de Cambra</summary>
-        <details><summary>Lorem</summary><div class="demo-content"/></details>
-        <details><summary>Ipsum</summary><div class="demo-content"/></details>
-        <details><summary>Dolor</summary><div class="demo-content"/></details>
-      </details>
+  <p>Lista de áreas protegidas de Portugal, por distrito.</p>
+  <div id="continente">
+    <h2>Continente</h2>
+    <details><summary><h3>Aveiro</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Aveiro/Nazaré</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378431">Q63378431</a></td>
+          <td><a href="https://protectedplanet.net/555623259">555623259</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0060">PTZPE0060</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0060">PTZPE0060</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.9656/-9.1082/pt">39° 57′ 56″ N, &#x2003;9° 06′ 30″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555623259&amp;categories=Special%20Protection%20Area%20of%20Aveiro-Nazar%C3%A9&amp;descriptionlang=pt&amp;description=Aveiro%2F%20Nazar%C3%A9" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Barrinha_de_Esmoriz">Barrinha de Esmoriz</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q16497003">Q16497003</a></td>
+          <td><a href="https://protectedplanet.net/555531088">555531088</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0018">PTCON0018</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0018">PTCON0018</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.970227/-8.644984/pt">40° 58′ 13″ N, &#x2003;8° 38′ 42″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531088&amp;categories=Barrinha%20de%20Esmoriz&amp;descriptionlang=pt&amp;description=Barrinha%20de%20Esmoriz" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Dunas_de_Mira,_G%C3%A2ndara_e_Gafanhas">Dunas de Mira, Gândara e Gafanhas</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q20053762">Q20053762</a></td>
+          <td><a href="https://protectedplanet.net/555531124">555531124</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0055">PTCON0055</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0055">PTCON0055</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.361756/-8.79957/pt">40° 21′ 42″ N, &#x2003;8° 47′ 58″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531124&amp;categories=Dunas%20de%20Mira%2C%20G%C3%A2ndara%20e%20Gafanhas&amp;descriptionlang=pt&amp;description=Dunas%20de%20Mira%2C%20G%C3%A2ndara%20e%20Gafanhas" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>lagoa da Pateira de Fermentelos e vale dos rios Águeda e Cértima</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378382">Q63378382</a></td>
+          <td><a href="https://protectedplanet.net/555555593">555555593</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555555593&amp;categories=&amp;descriptionlang=pt&amp;description=lagoa%20da%20Pateira%20de%20Fermentelos%20e%20vale%20dos%20rios%20%C3%81gueda%20e%20C%C3%A9rtima" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paul de Arzila</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378842">Q63378842</a></td>
+          <td><a href="https://protectedplanet.net/555531075">555531075</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0005">PTCON0005</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0005">PTCON0005</a></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531075&amp;categories=&amp;descriptionlang=pt&amp;description=Paul%20de%20Arzila" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paúl de Arzila</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378356">Q63378356</a></td>
+          <td><a href="https://protectedplanet.net/127881">127881</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=127881&amp;categories=&amp;descriptionlang=pt&amp;description=Pa%C3%BAl%20de%20Arzila" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paul de Arzila (Zona de Proteção Especial)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378816">Q63378816</a></td>
+          <td><a href="https://protectedplanet.net/555540879">555540879</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0005">PTZPE0005</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0005">PTZPE0005</a></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540879&amp;categories=&amp;descriptionlang=pt&amp;description=Paul%20de%20Arzila%20%28Zona%20de%20Prote%C3%A7%C3%A3o%20Especial%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Natural_das_Dunas_de_S%C3%A3o_Jacinto">Reserva Natural das Dunas de São Jacinto</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10359748">Q10359748</a></td>
+          <td><a href="https://protectedplanet.net/13331">13331</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.687419/-8.73437/pt">40° 41′ 15″ N, &#x2003;8° 44′ 04″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=13331&amp;categories=Reserva%20Natural%20das%20Dunas%20de%20S.%20Jacinto&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20das%20Dunas%20de%20S%C3%A3o%20Jacinto" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Ria de Aveiro</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378386">Q63378386</a></td>
+          <td><a href="https://protectedplanet.net/555540878">555540878</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0004">PTZPE0004</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0004">PTZPE0004</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.681834/-8.69733/pt">40° 40′ 55″ N, &#x2003;8° 41′ 50″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540878&amp;categories=&amp;descriptionlang=pt&amp;description=Ria%20de%20Aveiro" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Ria_de_Aveiro">Ria de Aveiro</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q379557">Q379557</a></td>
+          <td><a href="https://protectedplanet.net/555623590">555623590</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0061">PTCON0061</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0061">PTCON0061</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.684874/-8.655714/pt">40° 41′ 06″ N, &#x2003;8° 39′ 21″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555623590&amp;categories=Ria%20de%20Aveiro&amp;descriptionlang=pt&amp;description=Ria%20de%20Aveiro" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_de_Montemuro">Serra de Montemuro</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10370414">Q10370414</a></td>
+          <td><a href="https://protectedplanet.net/555531095">555531095</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0025">PTCON0025</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0025">PTCON0025</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.97527778/-7.97/pt">41° 00′ 38″ N, &#x2003;7° 59′ 08″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531095&amp;categories=Serra%20de%20Montemuro&amp;descriptionlang=pt&amp;description=Serra%20de%20Montemuro" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Serras da Freita e Arada</td>
+          <td><a href="https://www.wikidata.org/wiki/Q55080922">Q55080922</a></td>
+          <td><a href="https://protectedplanet.net/555531116">555531116</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0047">PTCON0047</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0047">PTCON0047</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.860208/-8.180625/pt">40° 51′ 37″ N, &#x2003;8° 10′ 50″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531116&amp;categories=Serras%20da%20Freita%20e%20Arada&amp;descriptionlang=pt&amp;description=Serras%20da%20Freita%20e%20Arada" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Beja</summary>
+    <details><summary><h3>Beja</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Alvito/Cuba</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378483">Q63378483</a></td>
+          <td><a href="https://protectedplanet.net/555531105">555531105</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0035">PTCON0035</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0035">PTCON0035</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.298183/-7.993027/pt">38° 17′ 53″ N, &#x2003;7° 59′ 35″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531105&amp;categories=&amp;descriptionlang=pt&amp;description=Alvito%2FCuba" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Castro Verde</td>
+          <td><a href="https://www.wikidata.org/wiki/Q54828077">Q54828077</a></td>
+          <td><a href="https://protectedplanet.net/555540913">555540913</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0046">PTZPE0046</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0046">PTZPE0046</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.7453/-8.009/pt">37° 44′ 43″ N, &#x2003;8° 00′ 32″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540913&amp;categories=&amp;descriptionlang=pt&amp;description=Q54828077" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Costa Sudoeste</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378424">Q63378424</a></td>
+          <td><a href="https://protectedplanet.net/555540889">555540889</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0015">PTZPE0015</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0015">PTZPE0015</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.289841/-8.888434/pt">37° 17′ 23″ N, &#x2003;8° 53′ 18″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540889&amp;categories=&amp;descriptionlang=pt&amp;description=Costa%20Sudoeste" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Costa Sudoeste (Sítio de Importância Comunitária)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378826">Q63378826</a></td>
+          <td><a href="https://protectedplanet.net/555531082">555531082</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0012">PTCON0012</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0012">PTCON0012</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.494111/-8.774972/pt">37° 29′ 39″ N, &#x2003;8° 46′ 30″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531082&amp;categories=&amp;descriptionlang=pt&amp;description=Costa%20Sudoeste%20%28S%C3%ADtio%20de%20Import%C3%A2ncia%20Comunit%C3%A1ria%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Cuba</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378410">Q63378410</a></td>
+          <td><a href="https://protectedplanet.net/555540923">555540923</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0057">PTZPE0057</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0057">PTZPE0057</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.102511/-7.880821/pt">38° 06′ 09″ N, &#x2003;7° 52′ 51″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540923&amp;categories=&amp;descriptionlang=pt&amp;description=Cuba" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Moura / Barrancos</td>
+          <td><a href="https://www.wikidata.org/wiki/Q55080930">Q55080930</a></td>
+          <td><a href="https://protectedplanet.net/555531122">555531122</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0053">PTCON0053</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0053">PTCON0053</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.081635/-7.063423/pt">38° 04′ 54″ N, &#x2003;7° 03′ 48″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531122&amp;categories=Moura%20%2F%20Barrancos%20%28site%20of%20community%20importance%29&amp;descriptionlang=pt&amp;description=Moura%20%2F%20Barrancos" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_do_Sudoeste_Alentejano_e_Costa_Vicentina">Parque Natural do Sudoeste Alentejano e Costa Vicentina</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q1548840">Q1548840</a></td>
+          <td><a href="https://protectedplanet.net/18945">18945</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.426056/-8.820271/pt">37° 25′ 34″ N, &#x2003;8° 49′ 13″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=18945&amp;categories=Parque%20Natural%20do%20Sudoeste%20Alentejano%20e%20Costa%20Vicentina&amp;descriptionlang=pt&amp;description=Parque%20Natural%20do%20Sudoeste%20Alentejano%20e%20Costa%20Vicentina" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_do_Vale_do_Guadiana">Parque Natural do Vale do Guadiana</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q145359">Q145359</a></td>
+          <td><a href="https://protectedplanet.net/143012">143012</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.700069/-7.648707/pt">37° 42′ 00″ N, &#x2003;7° 38′ 55″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=143012&amp;categories=Guadiana%20Valley%20Natural%20Park&amp;descriptionlang=pt&amp;description=Parque%20Natural%20do%20Vale%20do%20Guadiana" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Piçarras</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378399">Q63378399</a></td>
+          <td><a href="https://protectedplanet.net/555540924">555540924</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0058">PTZPE0058</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0058">PTZPE0058</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.630245/-8.162328/pt">37° 37′ 49″ N, &#x2003;8° 09′ 44″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540924&amp;categories=&amp;descriptionlang=pt&amp;description=Pi%C3%A7arras" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Sitio de Importância Comunitária do Guadiana</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63481145">Q63481145</a></td>
+          <td><a href="https://protectedplanet.net/555531106">555531106</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0036">PTCON0036</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0036">PTCON0036</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.650606111111/-7.7719119444444/pt">37° 39′ 02″ N, &#x2003;7° 46′ 19″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531106&amp;categories=Site%20of%20Community%20Importance%20of%20Guadiana%20in%20Portugal&amp;descriptionlang=pt&amp;description=Sitio%20de%20Import%C3%A2ncia%20Comunit%C3%A1ria%20do%20Guadiana" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Vale do Guadiana</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378442">Q63378442</a></td>
+          <td><a href="https://protectedplanet.net/555540914">555540914</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0047">PTZPE0047</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0047">PTZPE0047</a></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540914&amp;categories=&amp;descriptionlang=pt&amp;description=Vale%20do%20Guadiana" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Braga</summary>
+    <details><summary><h3>Braga</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Litoral Norte</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378381">Q63378381</a></td>
+          <td><a href="https://protectedplanet.net/555599538">555599538</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555599538&amp;categories=&amp;descriptionlang=pt&amp;description=Litoral%20Norte" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Bragança</summary>
+    <details><summary><h3>Bragança</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Minas de St. Adrião</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378484">Q63378484</a></td>
+          <td><a href="https://protectedplanet.net/555531111">555531111</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0042">PTCON0042</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0042">PTCON0042</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.536004/-6.455632/pt">41° 32′ 10″ N, &#x2003;6° 27′ 20″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531111&amp;categories=&amp;descriptionlang=pt&amp;description=Minas%20de%20St.%20Adri%C3%A3o" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Montesinho / Nogueira</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378412">Q63378412</a></td>
+          <td><a href="https://protectedplanet.net/555577799">555577799</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0003">PTZPE0003</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0003">PTZPE0003</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.853599/-6.883366/pt">41° 51′ 13″ N, &#x2003;6° 53′ 00″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555577799&amp;categories=&amp;descriptionlang=pt&amp;description=Montesinho%20%2F%20Nogueira" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Montesinho/Nogueira (Sítio de Importância Comunitária)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378821">Q63378821</a></td>
+          <td><a href="https://protectedplanet.net/555543265">555543265</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0002">PTCON0002</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0002">PTCON0002</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.854269/-6.883643/pt">41° 51′ 15″ N, &#x2003;6° 53′ 01″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555543265&amp;categories=&amp;descriptionlang=pt&amp;description=Montesinho%2FNogueira%20%28S%C3%ADtio%20de%20Import%C3%A2ncia%20Comunit%C3%A1ria%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Morais</td>
+          <td><a href="https://www.wikidata.org/wiki/Q15256074">Q15256074</a></td>
+          <td><a href="https://protectedplanet.net/555531093">555531093</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0023">PTCON0023</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0023">PTCON0023</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.505/-6.818/pt">41° 31′ 25″ N, &#x2003;6° 50′ 14″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531093&amp;categories=Morais%20%28site%20of%20community%20importance%29&amp;descriptionlang=pt&amp;description=Morais" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Paisagem_Protegida_da_Albufeira_do_Azibo">Paisagem Protegida da Albufeira do Azibo</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q4832565">Q4832565</a></td>
+          <td><a href="https://protectedplanet.net/388855">388855</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.56589/-6.90557/pt">41° 33′ 57″ N, &#x2003;6° 54′ 20″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=388855&amp;categories=Albufeira%20do%20Azibo%20Protected%20Landscape&amp;descriptionlang=pt&amp;description=Paisagem%20Protegida%20da%20Albufeira%20do%20Azibo" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_de_Montesinho">Parque Natural de Montesinho</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q3364588">Q3364588</a></td>
+          <td><a href="https://protectedplanet.net/18946">18946</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.891387/-6.843461/pt">41° 53′ 29″ N, &#x2003;6° 50′ 36″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=18946&amp;categories=Parque%20Natural%20de%20Montesinho&amp;descriptionlang=pt&amp;description=Parque%20Natural%20de%20Montesinho" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Castelo Branco</summary>
+    <details><summary><h3>Castelo Branco</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_da_Estrela">Serra da Estrela</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q738004">Q738004</a></td>
+          <td><a href="https://protectedplanet.net/555531084">555531084</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0014">PTCON0014</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0014">PTCON0014</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.32188889/-7.61291667/pt">40° 19′ 19″ N, &#x2003;7° 36′ 47″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531084&amp;categories=Serra%20da%20Estrela&amp;descriptionlang=pt&amp;description=Serra%20da%20Estrela" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_da_Gardunha">Serra da Gardunha</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q3028369">Q3028369</a></td>
+          <td><a href="https://protectedplanet.net/555531098">555531098</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0028">PTCON0028</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0028">PTCON0028</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.1775/-7.3405555555556/pt">40° 05′ 56″ N, &#x2003;7° 30′ 39″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531098&amp;categories=Serra%20da%20Gardunha&amp;descriptionlang=pt&amp;description=Serra%20da%20Gardunha" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Serra da Gardunha (paisagem protegida regional)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378840">Q63378840</a></td>
+          <td><a href="https://protectedplanet.net/555514085">555514085</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.095569/-7.503728/pt">40° 05′ 44″ N, &#x2003;7° 30′ 13″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555514085&amp;categories=&amp;descriptionlang=pt&amp;description=Serra%20da%20Gardunha%20%28paisagem%20protegida%20regional%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_do_A%C3%A7or">Serra do Açor</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10370452">Q10370452</a></td>
+          <td><a href="https://protectedplanet.net/555531120">555531120</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0051">PTCON0051</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0051">PTCON0051</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.19744/-7.79932/pt">40° 12′ 52″ N, &#x2003;7° 55′ 08″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531120&amp;categories=Serra%20do%20A%C3%A7or&amp;descriptionlang=pt&amp;description=Serra%20do%20A%C3%A7or" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Tejo Internacional; Erges e Pônsul</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378406">Q63378406</a></td>
+          <td><a href="https://protectedplanet.net/555540910">555540910</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0042">PTZPE0042</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0042">PTZPE0042</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.72891/-7.238798/pt">39° 43′ 44″ N, &#x2003;7° 14′ 20″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540910&amp;categories=&amp;descriptionlang=pt&amp;description=Tejo%20Internacional%3B%20Erges%20e%20P%C3%B4nsul" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_da_Malcata" class="stub">Serra da Malcata</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q9077158">Q9077158</a></td>
+          <td><a href="https://protectedplanet.net/555540881">555540881</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0007">PTZPE0007</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0007">PTZPE0007</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.252607/-7.041384/pt">40° 15′ 09″ N, &#x2003;7° 02′ 29″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540881&amp;categories=&amp;descriptionlang=pt&amp;description=Serra%20da%20Malcata" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Coimbra</summary>
+    <details><summary><h3>Coimbra</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Estuário do Mondego</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378366">Q63378366</a></td>
+          <td><a href="https://protectedplanet.net/902883">902883</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=902883&amp;categories=&amp;descriptionlang=pt&amp;description=Estu%C3%A1rio%20do%20Mondego" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Monumento_Natural_do_Cabo_Mondego">Monumento Natural do Cabo Mondego</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10332134">Q10332134</a></td>
+          <td><a href="https://protectedplanet.net/388856">388856</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.190767/-8.908293/pt">40° 11′ 27″ N, &#x2003;8° 54′ 30″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=388856&amp;categories=&amp;descriptionlang=pt&amp;description=Monumento%20Natural%20do%20Cabo%20Mondego" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Paisagem_Protegida_da_Serra_do_A%C3%A7or">Paisagem Protegida da Serra do Açor</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q7455252">Q7455252</a></td>
+          <td><a href="https://protectedplanet.net/5786">5786</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.216457/-7.922815/pt">40° 12′ 59″ N, &#x2003;7° 55′ 22″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=5786&amp;categories=&amp;descriptionlang=pt&amp;description=Paisagem%20Protegida%20da%20Serra%20do%20A%C3%A7or" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paul da Madriz</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378401">Q63378401</a></td>
+          <td><a href="https://protectedplanet.net/555540880">555540880</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0006">PTZPE0006</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0006">PTZPE0006</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.127949/-8.637712/pt">40° 07′ 41″ N, &#x2003;8° 38′ 16″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540880&amp;categories=&amp;descriptionlang=pt&amp;description=Paul%20da%20Madriz" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paúl de Madriz</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378357">Q63378357</a></td>
+          <td><a href="https://protectedplanet.net/127883">127883</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=127883&amp;categories=&amp;descriptionlang=pt&amp;description=Pa%C3%BAl%20de%20Madriz" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paul do Taipal</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378393">Q63378393</a></td>
+          <td><a href="https://protectedplanet.net/555540908">555540908</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0040">PTZPE0040</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0040">PTZPE0040</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.184573/-8.689814/pt">40° 11′ 04″ N, &#x2003;8° 41′ 23″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540908&amp;categories=&amp;descriptionlang=pt&amp;description=Paul%20do%20Taipal" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paúl do Taipal</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378354">Q63378354</a></td>
+          <td><a href="https://protectedplanet.net/900610">900610</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=900610&amp;categories=&amp;descriptionlang=pt&amp;description=Pa%C3%BAl%20do%20Taipal" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Natural_do_Paul_de_Arzila">Reserva Natural do Paul de Arzila</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10359754">Q10359754</a></td>
+          <td><a href="https://protectedplanet.net/18942">18942</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.1686/-8.5553/pt">40° 10′ 03″ N, &#x2003;8° 33′ 17″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=18942&amp;categories=Paul%20de%20Arzila&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20do%20Paul%20de%20Arzila" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_da_Lous%C3%A3">Serra da Lousã</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10370357">Q10370357</a></td>
+          <td><a href="https://protectedplanet.net/555531128">555531128</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0060">PTCON0060</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0060">PTCON0060</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.083441/-8.197883/pt">40° 05′ 00″ N, &#x2003;8° 11′ 52″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531128&amp;categories=Serra%20da%20Lous%C3%A3&amp;descriptionlang=pt&amp;description=Serra%20da%20Lous%C3%A3" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Évora</summary>
+    <details><summary><h3>Évora</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Açude do Monte da Barca</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378568">Q63378568</a></td>
+          <td><a href="https://protectedplanet.net/396329">396329</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.897208/-8.467988/pt">38° 53′ 50″ N, &#x2003;8° 28′ 05″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396329&amp;categories=&amp;descriptionlang=pt&amp;description=A%C3%A7ude%20do%20Monte%20da%20Barca" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Évora</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378409">Q63378409</a></td>
+          <td><a href="https://protectedplanet.net/555540921">555540921</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0055">PTZPE0055</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0055">PTZPE0055</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.454824/-7.957891/pt">38° 27′ 17″ N, &#x2003;7° 57′ 28″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540921&amp;categories=&amp;descriptionlang=pt&amp;description=%C3%89vora" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Monfurado</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378481">Q63378481</a></td>
+          <td><a href="https://protectedplanet.net/555531101">555531101</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0031">PTCON0031</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0031">PTCON0031</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.5833/-8.1167/pt">38° 35′ 00″ N, &#x2003;8° 07′ 00″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531101&amp;categories=&amp;descriptionlang=pt&amp;description=Monfurado" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Mourão/Moura/Barrancos</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378441">Q63378441</a></td>
+          <td><a href="https://protectedplanet.net/555540912">555540912</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0045">PTZPE0045</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0045">PTZPE0045</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.150005/-7.179085/pt">38° 09′ 00″ N, &#x2003;7° 10′ 45″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540912&amp;categories=&amp;descriptionlang=pt&amp;description=Mour%C3%A3o%2FMoura%2FBarrancos" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Reguengos</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378420">Q63378420</a></td>
+          <td><a href="https://protectedplanet.net/555540922">555540922</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0056">PTZPE0056</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0056">PTZPE0056</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.355165/-7.477607/pt">38° 21′ 19″ N, &#x2003;7° 28′ 39″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540922&amp;categories=&amp;descriptionlang=pt&amp;description=Reguengos" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Rio Guadiana/Juromenha</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378482">Q63378482</a></td>
+          <td><a href="https://protectedplanet.net/555531102">555531102</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0032">PTCON0032</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0032">PTCON0032</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.655557/-7.271498/pt">38° 39′ 20″ N, &#x2003;7° 16′ 17″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531102&amp;categories=&amp;descriptionlang=pt&amp;description=Rio%20Guadiana%2FJuromenha" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Faro</summary>
+    <details><summary><h3>Faro</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Arade / Odelouca</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378522">Q63378522</a></td>
+          <td><a href="https://protectedplanet.net/555531121">555531121</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0052">PTCON0052</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0052">PTCON0052</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.199603/-8.497955/pt">37° 11′ 59″ N, &#x2003;8° 29′ 53″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531121&amp;categories=&amp;descriptionlang=pt&amp;description=Arade%20%2F%20Odelouca" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Barrocal">Barrocal</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q9649367">Q9649367</a></td>
+          <td><a href="https://protectedplanet.net/555531118">555531118</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0049">PTCON0049</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0049">PTCON0049</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.207597/-8.099812/pt">37° 12′ 27″ N, &#x2003;8° 05′ 59″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531118&amp;categories=Barrocal&amp;descriptionlang=pt&amp;description=Barrocal" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Caldeirão</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378385">Q63378385</a></td>
+          <td><a href="https://protectedplanet.net/555540872">555540872</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0057">PTCON0057</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0057">PTCON0057</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.302061/-8.048144/pt">37° 18′ 07″ N, &#x2003;8° 02′ 53″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540872&amp;categories=&amp;descriptionlang=pt&amp;description=Caldeir%C3%A3o" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Cerro_da_Cabe%C3%A7a">Cerro da Cabeça</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q9736189">Q9736189</a></td>
+          <td><a href="https://protectedplanet.net/555531119">555531119</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0050">PTCON0050</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0050">PTCON0050</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.112472/-7.782004/pt">37° 06′ 45″ N, &#x2003;7° 46′ 55″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531119&amp;categories=&amp;descriptionlang=pt&amp;description=Cerro%20da%20Cabe%C3%A7a" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Leixão da Gaivota</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378403">Q63378403</a></td>
+          <td><a href="https://protectedplanet.net/555540890">555540890</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0016">PTZPE0016</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0016">PTZPE0016</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.104293/-8.516968/pt">37° 06′ 15″ N, &#x2003;8° 31′ 01″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540890&amp;categories=&amp;descriptionlang=pt&amp;description=Leix%C3%A3o%20da%20Gaivota" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Monchique</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378411">Q63378411</a></td>
+          <td><a href="https://protectedplanet.net/555540871">555540871</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0037">PTCON0037</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0037">PTCON0037</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.353597/-8.577456/pt">37° 21′ 13″ N, &#x2003;8° 34′ 39″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540871&amp;categories=&amp;descriptionlang=pt&amp;description=Monchique" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Parque Natural da Ria Formosa</td>
+          <td><a href="https://www.wikidata.org/wiki/Q61715781">Q61715781</a></td>
+          <td><a href="https://protectedplanet.net/4724">4724</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/4724">4724</a></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.063181/-7.723598/pt">37° 03′ 47″ N, &#x2003;7° 43′ 25″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=4724&amp;categories=&amp;descriptionlang=pt&amp;description=Parque%20Natural%20da%20Ria%20Formosa" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Natural_do_Sapal_de_Castro_Marim_e_Vila_Real_de_Santo_Ant%C3%B3nio">Reserva Natural do Sapal de Castro Marim e Vila Real de Santo António</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q5050789">Q5050789</a></td>
+          <td><a href="https://protectedplanet.net/4723">4723</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/4723">4723</a></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.207657/-7.443618/pt">37° 12′ 32″ N, &#x2003;7° 26′ 41″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=4723&amp;categories=Reserva%20Natural%20do%20Sapal%20de%20Castro%20Marim%20e%20Vila%20Real%20de%20Santo%20Ant%C3%B3nio&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20do%20Sapal%20de%20Castro%20Marim%20e%20Vila%20Real%20de%20Santo%20Ant%C3%B3nio" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Ria_de_Alvor">Ria de Alvor</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10360443">Q10360443</a></td>
+          <td><a href="https://protectedplanet.net/127884">127884</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0058">PTCON0058</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0058">PTCON0058</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.140873/-8.614558/pt">37° 08′ 27″ N, &#x2003;8° 36′ 52″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=127884&amp;categories=Ria%20de%20Alvor&amp;descriptionlang=pt&amp;description=Ria%20de%20Alvor" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Ria Formosa</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378355">Q63378355</a></td>
+          <td><a href="https://protectedplanet.net/68146">68146</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.043918/-7.741066/pt">37° 02′ 38″ N, &#x2003;7° 44′ 28″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=68146&amp;categories=&amp;descriptionlang=pt&amp;description=Ria%20Formosa" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Ria Formosa (Zona de Proteção Especial)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378817">Q63378817</a></td>
+          <td><a href="https://protectedplanet.net/555540891">555540891</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0017">PTZPE0017</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0017">PTZPE0017</a></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540891&amp;categories=&amp;descriptionlang=pt&amp;description=Ria%20Formosa%20%28Zona%20de%20Prote%C3%A7%C3%A3o%20Especial%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Ria Formosa / Castro Marim</td>
+          <td><a href="https://www.wikidata.org/wiki/Q61715911">Q61715911</a></td>
+          <td><a href="https://protectedplanet.net/555531083">555531083</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0013">PTCON0013</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0013">PTCON0013</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.065287/-7.71558/pt">37° 03′ 55″ N, &#x2003;7° 42′ 56″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531083&amp;categories=Site%20of%20Community%20Importance%20of%20Ria%20Formosa-Castro%20Marim&amp;descriptionlang=pt&amp;description=Ria%20Formosa%20%2F%20Castro%20Marim" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Ribeira_de_Quarteira">Ribeira de Quarteira</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10360793">Q10360793</a></td>
+          <td><a href="https://protectedplanet.net/555531107">555531107</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0038">PTCON0038</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0038">PTCON0038</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.074355/-8.125467/pt">37° 08′ 53″ N, &#x2003;8° 11′ 36″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531107&amp;categories=Quarteira%20River&amp;descriptionlang=pt&amp;description=Ribeira%20de%20Quarteira" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Ribeira do Vascão</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378383">Q63378383</a></td>
+          <td><a href="https://protectedplanet.net/555555594">555555594</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555555594&amp;categories=&amp;descriptionlang=pt&amp;description=Ribeira%20do%20Vasc%C3%A3o" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Rocha_da_Pena">Rocha da Pena</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q1584266">Q1584266</a></td>
+          <td><a href="https://protectedplanet.net/396331">396331</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396331&amp;categories=Rocha%20da%20Pena&amp;descriptionlang=pt&amp;description=Rocha%20da%20Pena" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Sapais de Castro Marim</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378361">Q63378361</a></td>
+          <td><a href="https://protectedplanet.net/127885">127885</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=127885&amp;categories=&amp;descriptionlang=pt&amp;description=Sapais%20de%20Castro%20Marim" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Sapais de Castro Marim (Zona de Proteção Especial)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378815">Q63378815</a></td>
+          <td><a href="https://protectedplanet.net/555540892">555540892</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0018">PTZPE0018</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0018">PTZPE0018</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.211877/-7.44198/pt">37° 12′ 43″ N, &#x2003;7° 26′ 31″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540892&amp;categories=&amp;descriptionlang=pt&amp;description=Sapais%20de%20Castro%20Marim%20%28Zona%20de%20Prote%C3%A7%C3%A3o%20Especial%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_de_Monchique">Serra de Monchique</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q580119">Q580119</a></td>
+          <td><a href="https://protectedplanet.net/555549137">555549137</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0037">PTCON0037</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0037">PTCON0037</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.31666667/-8.6/pt">37° 19′ 00″ N, &#x2003;8° 36′ 00″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555549137&amp;categories=Serra%20de%20Monchique&amp;descriptionlang=pt&amp;description=Serra%20de%20Monchique" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_do_Caldeir%C3%A3o">Serra do Caldeirão</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q4417819">Q4417819</a></td>
+          <td><a href="https://protectedplanet.net/555549138">555549138</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0057">PTCON0057</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0057">PTCON0057</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.302061/-8.048144/pt">37° 18′ 07″ N, &#x2003;8° 02′ 53″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555549138&amp;categories=&amp;descriptionlang=pt&amp;description=Serra%20do%20Caldeir%C3%A3o" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/S%C3%ADtio_Classificado_da_Fonte_Ben%C3%A9mola">Sítio Classificado da Fonte Benémola</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10376492">Q10376492</a></td>
+          <td><a href="https://protectedplanet.net/396330">396330</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.210554/-8.010757/pt">37° 12′ 35″ N, &#x2003;8° 00′ 39″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396330&amp;categories=Fonte%20Ben%C3%A9mola&amp;descriptionlang=pt&amp;description=S%C3%ADtio%20Classificado%20da%20Fonte%20Ben%C3%A9mola" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Guarda</summary>
+    <details><summary><h3>Guarda</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Douro Internacional</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378450">Q63378450</a></td>
+          <td><a href="https://protectedplanet.net/555531092">555531092</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0022">PTCON0022</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0022">PTCON0022</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.090252/-6.773385/pt">41° 05′ 25″ N, &#x2003;6° 46′ 24″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531092&amp;categories=&amp;descriptionlang=pt&amp;description=Douro%20Internacional" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Planalto Superior da Serra da Estrela e Parte Superior do Rio Zêzere</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378363">Q63378363</a></td>
+          <td><a href="https://protectedplanet.net/902880">902880</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=902880&amp;categories=&amp;descriptionlang=pt&amp;description=Planalto%20Superior%20da%20Serra%20da%20Estrela%20e%20Parte%20Superior%20do%20Rio%20Z%C3%AAzere" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_da_Faia_Brava">Reserva da Faia Brava</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q59243332">Q59243332</a></td>
+          <td><a href="https://protectedplanet.net/396307">396307</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.924903/-7.102151/pt">40° 55′ 30″ N, &#x2003;7° 06′ 08″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396307&amp;categories=Reserva%20da%20Faia%20Brava&amp;descriptionlang=pt&amp;description=Reserva%20da%20Faia%20Brava" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Vale do Côa</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378405">Q63378405</a></td>
+          <td><a href="https://protectedplanet.net/555540907">555540907</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0039">PTZPE0039</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0039">PTZPE0039</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.920053/-7.091103/pt">40° 55′ 12″ N, &#x2003;7° 05′ 28″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540907&amp;categories=&amp;descriptionlang=pt&amp;description=Vale%20do%20C%C3%B4a" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_da_Malcata" class="stub">Serra da Malcata</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q9077158">Q9077158</a></td>
+          <td><a href="https://protectedplanet.net/555540881">555540881</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0007">PTZPE0007</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0007">PTZPE0007</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.252607/-7.041384/pt">40° 15′ 09″ N, &#x2003;7° 02′ 29″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540881&amp;categories=&amp;descriptionlang=pt&amp;description=Serra%20da%20Malcata" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Leiria</summary>
+    <details><summary><h3>Leiria</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Arquip%C3%A9lago_das_Berlengas">Arquipélago das Berlengas</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q821015">Q821015</a></td>
+          <td><a href="https://protectedplanet.net/555531076">555531076</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0006">PTCON0006</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0006">PTCON0006</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.415624/-9.510041/pt">39° 24′ 56″ N, &#x2003;9° 30′ 36″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531076&amp;categories=Berlengas&amp;descriptionlang=pt&amp;description=Arquip%C3%A9lago%20das%20Berlengas" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Azabuxo-Leiria</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378463">Q63378463</a></td>
+          <td><a href="https://protectedplanet.net/555531115">555531115</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0046">PTCON0046</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0046">PTCON0046</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.749321/-8.766013/pt">39° 44′ 58″ N, &#x2003;8° 45′ 58″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531115&amp;categories=&amp;descriptionlang=pt&amp;description=Azabuxo-Leiria" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Berlengas</td>
+          <td><a href="https://www.wikidata.org/wiki/Q22771851">Q22771851</a></td>
+          <td><a href="https://protectedplanet.net/555547590">555547590</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.4136/-9.5105/pt">39° 24′ 49″ N, &#x2003;9° 30′ 38″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555547590&amp;categories=Berlengas&amp;descriptionlang=pt&amp;description=Q22771851" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Berlengas (Marine Protected Area (OSPAR) )</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378812">Q63378812</a></td>
+          <td><a href="https://protectedplanet.net/555599535">555599535</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555599535&amp;categories=Berlengas&amp;descriptionlang=pt&amp;description=Berlengas%20%28Marine%20Protected%20Area%20%28OSPAR%29%20%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Ilhas Berlengas</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378430">Q63378430</a></td>
+          <td><a href="https://protectedplanet.net/555540883">555540883</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0009">PTZPE0009</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0009">PTZPE0009</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.327553/-9.593281/pt">39° 19′ 39″ N, &#x2003;9° 35′ 36″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540883&amp;categories=Berlengas&amp;descriptionlang=pt&amp;description=Ilhas%20Berlengas" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_das_Serras_de_Aire_e_Candeeiros">Parque Natural das Serras de Aire e Candeeiros</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q3364596">Q3364596</a></td>
+          <td><a href="https://protectedplanet.net/5783">5783</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.504887/-8.801987/pt">39° 30′ 18″ N, &#x2003;8° 48′ 07″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=5783&amp;categories=Parque%20Natural%20das%20Serras%20de%20Aire%20e%20Candeeiros&amp;descriptionlang=pt&amp;description=Parque%20Natural%20das%20Serras%20de%20Aire%20e%20Candeeiros" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Paul_de_Tornada">Paul de Tornada</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10346308">Q10346308</a></td>
+          <td><a href="https://protectedplanet.net/900609">900609</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=900609&amp;categories=&amp;descriptionlang=pt&amp;description=Paul%20de%20Tornada" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Peniche / Santa Cruz</td>
+          <td><a href="https://www.wikidata.org/wiki/Q55080933">Q55080933</a></td>
+          <td><a href="https://protectedplanet.net/555531125">555531125</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0056">PTCON0056</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0056">PTCON0056</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.285699/-9.35037/pt">39° 17′ 09″ N, &#x2003;9° 21′ 01″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531125&amp;categories=Peniche%20%2F%20Santa%20Cruz%20%28site%20of%20community%20importance%29&amp;descriptionlang=pt&amp;description=Peniche%20%2F%20Santa%20Cruz" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Reserva Natural das Berlengas</td>
+          <td><a href="https://www.wikidata.org/wiki/Q3457408">Q3457408</a></td>
+          <td><a href="https://protectedplanet.net/4796">4796</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.4452/-9.52652/pt">39° 26′ 38″ N, &#x2003;9° 31′ 52″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=4796&amp;categories=Berlengas&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20das%20Berlengas" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Serras d'Aire e Candeeiros</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378517">Q63378517</a></td>
+          <td><a href="https://protectedplanet.net/555531085">555531085</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0015">PTCON0015</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0015">PTCON0015</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.516845/-8.796273/pt">39° 31′ 01″ N, &#x2003;8° 47′ 47″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531085&amp;categories=&amp;descriptionlang=pt&amp;description=Serras%20d%27Aire%20e%20Candeeiros" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Sicó / Alvaiázere</td>
+          <td><a href="https://www.wikidata.org/wiki/Q55080926">Q55080926</a></td>
+          <td><a href="https://protectedplanet.net/555531114">555531114</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0045">PTCON0045</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0045">PTCON0045</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.824353/-8.409846/pt">39° 49′ 28″ N, &#x2003;8° 24′ 35″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531114&amp;categories=Sic%C3%B3%20%2F%20Alvai%C3%A1zere%20%28site%20of%20community%20importance%29&amp;descriptionlang=pt&amp;description=Sic%C3%B3%20%2F%20Alvai%C3%A1zere" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Lisboa</summary>
+    <details><summary><h3>Lisboa</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Cabo_Raso">Cabo Raso</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378394">Q63378394</a></td>
+          <td><a href="https://protectedplanet.net/555623260">555623260</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0061">PTZPE0061</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0061">PTZPE0061</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.7295/-9.539/pt">38° 42′ 36″ N, &#x2003;9° 29′ 13″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555623260&amp;categories=Cabo%20Raso&amp;descriptionlang=pt&amp;description=Cabo%20Raso" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_de_Sintra-Cascais">Parque Natural de Sintra-Cascais</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q7525142">Q7525142</a></td>
+          <td><a href="https://protectedplanet.net/5809">5809</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0008">PTCON0008</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0008">PTCON0008</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.81/-9.43/pt">38° 51′ 31″ N, &#x2003;9° 27′ 46″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=5809&amp;categories=Parque%20Natural%20de%20Sintra-Cascais&amp;descriptionlang=pt&amp;description=Parque%20Natural%20de%20Sintra-Cascais" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_de_Montejunto">Serra de Montejunto</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q7455225">Q7455225</a></td>
+          <td><a href="https://protectedplanet.net/388860">388860</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.187449/-9.055554/pt">39° 11′ 15″ N, &#x2003;9° 03′ 20″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=388860&amp;categories=Serra%20de%20Montejunto&amp;descriptionlang=pt&amp;description=Serra%20de%20Montejunto" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Serra de Montejunto (Sítio de Importância Comunitária)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378828">Q63378828</a></td>
+          <td><a href="https://protectedplanet.net/555531117">555531117</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0048">PTCON0048</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0048">PTCON0048</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.192262/-9.042616/pt">39° 11′ 32″ N, &#x2003;9° 02′ 33″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531117&amp;categories=&amp;descriptionlang=pt&amp;description=Serra%20de%20Montejunto%20%28S%C3%ADtio%20de%20Import%C3%A2ncia%20Comunit%C3%A1ria%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Serras do Socorro e Archeira</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378684">Q63378684</a></td>
+          <td><a href="https://protectedplanet.net/555514093">555514093</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555514093&amp;categories=&amp;descriptionlang=pt&amp;description=Serras%20do%20Socorro%20e%20Archeira" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Portalegre</summary>
+    <details><summary><h3>Portalegre</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Cabeção</td>
+          <td><a href="https://www.wikidata.org/wiki/Q55080941">Q55080941</a></td>
+          <td><a href="https://protectedplanet.net/555531099">555531099</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0029">PTCON0029</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0029">PTCON0029</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.106555/-8.008172/pt">39° 06′ 24″ N, &#x2003;8° 00′ 29″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531099&amp;categories=Cabe%C3%A7%C3%A3o%20%28site%20of%20community%20importance%29&amp;descriptionlang=pt&amp;description=Cabe%C3%A7%C3%A3o" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Caia</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378462">Q63378462</a></td>
+          <td><a href="https://protectedplanet.net/555531100">555531100</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0030">PTCON0030</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0030">PTCON0030</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.970795/-7.088616/pt">38° 58′ 15″ N, &#x2003;7° 05′ 19″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531100&amp;categories=&amp;descriptionlang=pt&amp;description=Caia" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Campo Maior</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378440">Q63378440</a></td>
+          <td><a href="https://protectedplanet.net/555540911">555540911</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0043">PTZPE0043</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0043">PTZPE0043</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.034292/-6.97605/pt">39° 02′ 03″ N, &#x2003;6° 58′ 34″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540911&amp;categories=&amp;descriptionlang=pt&amp;description=Campo%20Maior" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Monforte</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378426">Q63378426</a></td>
+          <td><a href="https://protectedplanet.net/555540917">555540917</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0051">PTZPE0051</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0051">PTZPE0051</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.064504/-7.500563/pt">39° 03′ 52″ N, &#x2003;7° 30′ 02″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540917&amp;categories=&amp;descriptionlang=pt&amp;description=Monforte" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_da_Serra_de_S%C3%A3o_Mamede">Parque Natural da Serra de São Mamede</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q7455242">Q7455242</a></td>
+          <td><a href="https://protectedplanet.net/20673">20673</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.3/-7.33/pt">39° 21′ 51″ N, &#x2003;7° 22′ 03″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=20673&amp;categories=Parque%20Natural%20da%20Serra%20de%20S%C3%A3o%20Mamede&amp;descriptionlang=pt&amp;description=Parque%20Natural%20da%20Serra%20de%20S%C3%A3o%20Mamede" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>São Vicente</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378443">Q63378443</a></td>
+          <td><a href="https://protectedplanet.net/555540920">555540920</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0054">PTZPE0054</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0054">PTZPE0054</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.954683/-7.172261/pt">38° 57′ 17″ N, &#x2003;7° 10′ 20″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540920&amp;categories=&amp;descriptionlang=pt&amp;description=S%C3%A3o%20Vicente" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_de_S%C3%A3o_Mamede">Serra de São Mamede</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q2273942">Q2273942</a></td>
+          <td><a href="https://protectedplanet.net/555531077">555531077</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0007">PTCON0007</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0007">PTCON0007</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.28/-7.35/pt">39° 20′ 50″ N, &#x2003;7° 22′ 34″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531077&amp;categories=Serra%20de%20S%C3%A3o%20Mamede&amp;descriptionlang=pt&amp;description=Serra%20de%20S%C3%A3o%20Mamede" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Torre da Bolsa</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378428">Q63378428</a></td>
+          <td><a href="https://protectedplanet.net/555540925">555540925</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0059">PTZPE0059</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0059">PTZPE0059</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.862869/-7.123163/pt">38° 51′ 46″ N, &#x2003;7° 07′ 23″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540925&amp;categories=&amp;descriptionlang=pt&amp;description=Torre%20da%20Bolsa" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Veiros</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378427">Q63378427</a></td>
+          <td><a href="https://protectedplanet.net/555540918">555540918</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0052">PTZPE0052</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0052">PTZPE0052</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.989458/-7.505972/pt">38° 59′ 22″ N, &#x2003;7° 30′ 21″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540918&amp;categories=&amp;descriptionlang=pt&amp;description=Veiros" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Vila Fernando</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378408">Q63378408</a></td>
+          <td><a href="https://protectedplanet.net/555540919">555540919</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0053">PTZPE0053</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0053">PTZPE0053</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.882357/-7.341333/pt">38° 52′ 56″ N, &#x2003;7° 20′ 29″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540919&amp;categories=&amp;descriptionlang=pt&amp;description=Vila%20Fernando" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Porto</summary>
+    <details><summary><h3>Porto</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Paisagem_Protegida_Regional_do_Litoral_de_Vila_do_Conde_e_Reserva_Ornitol%C3%B3gica_de_Mindelo">Paisagem Protegida Regional do Litoral de Vila do Conde e Reserva Ornitológica de Mindelo</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10343652">Q10343652</a></td>
+          <td><a href="https://protectedplanet.net/396327">396327</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.311923/-8.740243/pt">41° 18′ 43″ N, &#x2003;8° 44′ 25″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396327&amp;categories=Paisagem%20Protegida%20Regional%20do%20Litoral%20de%20Vila%20do%20Conde%20e%20Reserva%20Ornitol%C3%B3gica%20de%20Mindelo&amp;descriptionlang=pt&amp;description=Paisagem%20Protegida%20Regional%20do%20Litoral%20de%20Vila%20do%20Conde%20e%20Reserva%20Ornitol%C3%B3gica%20de%20Mindelo" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Reserva Natural Local do Estuário do Douro</td>
+          <td><a href="https://www.wikidata.org/wiki/Q52855310">Q52855310</a></td>
+          <td><a href="https://protectedplanet.net/555514082">555514082</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.139896/-8.66272/pt">41° 08′ 24″ N, &#x2003;8° 39′ 46″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555514082&amp;categories=Reserva%20Natural%20Local%20do%20Estu%C3%A1rio%20do%20Douro&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20Local%20do%20Estu%C3%A1rio%20do%20Douro" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Santarém</summary>
+    <details><summary><h3>Santarém</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Monumento_Natural_das_Pegadas_dos_Dinoss%C3%A1urios_da_Serra_de_Aire">Monumento Natural das Pegadas de Dinossáurio de Ourém - Torres Novas</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10332130">Q10332130</a></td>
+          <td><a href="https://protectedplanet.net/169024">169024</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.56972222/-8.58888889/pt">39° 34′ 05″ N, &#x2003;8° 35′ 23″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=169024&amp;categories=Pegadas%20da%20Serra%20de%20Aire&amp;descriptionlang=pt&amp;description=Monumento%20Natural%20das%20Pegadas%20de%20Dinoss%C3%A1urio%20de%20Our%C3%A9m%20-%20Torres%20Novas" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paul do Boquilobo</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378421">Q63378421</a></td>
+          <td><a href="https://protectedplanet.net/555540882">555540882</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0008">PTZPE0008</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0008">PTZPE0008</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.382194/-8.535829/pt">39° 22′ 56″ N, &#x2003;8° 32′ 09″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540882&amp;categories=&amp;descriptionlang=pt&amp;description=Paul%20do%20Boquilobo" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paúl do Boquilobo</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378348">Q63378348</a></td>
+          <td><a href="https://protectedplanet.net/5811">5811</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=5811&amp;categories=&amp;descriptionlang=pt&amp;description=Pa%C3%BAl%20do%20Boquilobo" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paúl do Boquilobo (sítio Ramsar)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378809">Q63378809</a></td>
+          <td><a href="https://protectedplanet.net/127882">127882</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=127882&amp;categories=&amp;descriptionlang=pt&amp;description=Pa%C3%BAl%20do%20Boquilobo%20%28s%C3%ADtio%20Ramsar%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Polje de Mira Minde e nascentes relacionadas</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378365">Q63378365</a></td>
+          <td><a href="https://protectedplanet.net/902882">902882</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=902882&amp;categories=&amp;descriptionlang=pt&amp;description=Polje%20de%20Mira%20Minde%20e%20nascentes%20relacionadas" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Natural_do_Paul_do_Boquilobo">Reserva Natural do Paul do Boquilobo</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q4944223">Q4944223</a></td>
+          <td><a href="https://protectedplanet.net/4725">4725</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.396666666667/-8.5361111111111/pt">39° 23′ 16″ N, &#x2003;8° 31′ 57″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=4725&amp;categories=Paul%20do%20Boquilobo&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20do%20Paul%20do%20Boquilobo" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/S%C3%ADtio_Classificado_dos_A%C3%A7udes_da_Agolada">Sítio Classificado dos Açudes da Agolada</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10376499">Q10376499</a></td>
+          <td><a href="https://protectedplanet.net/396328">396328</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.96277778/-8.55694444/pt">38° 57′ 57″ N, &#x2003;8° 33′ 24″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396328&amp;categories=&amp;descriptionlang=pt&amp;description=S%C3%ADtio%20Classificado%20dos%20A%C3%A7udes%20da%20Agolada" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Setúbal</summary>
+    <details><summary><h3>Setúbal</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Açude da Murta</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378422">Q63378422</a></td>
+          <td><a href="https://protectedplanet.net/555540886">555540886</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0012">PTZPE0012</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0012">PTZPE0012</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.393202/-8.715008/pt">38° 23′ 36″ N, &#x2003;8° 42′ 54″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540886&amp;categories=&amp;descriptionlang=pt&amp;description=A%C3%A7ude%20da%20Murta" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Arrabida</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378380">Q63378380</a></td>
+          <td><a href="https://protectedplanet.net/555599537">555599537</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555599537&amp;categories=&amp;descriptionlang=pt&amp;description=Arrabida" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Arrábida/Espichel</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378499">Q63378499</a></td>
+          <td><a href="https://protectedplanet.net/555531080">555531080</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0010">PTCON0010</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0010">PTCON0010</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.472117/-9.059147/pt">38° 28′ 20″ N, &#x2003;9° 03′ 33″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531080&amp;categories=&amp;descriptionlang=pt&amp;description=Arr%C3%A1bida%2FEspichel" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Cabo_Espichel">Cabo Espichel</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378387">Q63378387</a></td>
+          <td><a href="https://protectedplanet.net/555540916">555540916</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0050">PTZPE0050</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0050">PTZPE0050</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.394/-9.2278/pt">38° 24′ 50″ N, &#x2003;9° 13′ 19″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540916&amp;categories=Cabo%20Espichel&amp;descriptionlang=pt&amp;description=Cabo%20Espichel" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Comporta / Galé</td>
+          <td><a href="https://www.wikidata.org/wiki/Q55080938">Q55080938</a></td>
+          <td><a href="https://protectedplanet.net/555531104">555531104</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0034">PTCON0034</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0034">PTCON0034</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.291415/-8.587216/pt">38° 17′ 29″ N, &#x2003;8° 35′ 14″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531104&amp;categories=Comporta%20%2F%20Gal%C3%A9%20%28site%20of%20community%20importance%29&amp;descriptionlang=pt&amp;description=Comporta%20%2F%20Gal%C3%A9" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Estuário do Sado</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378353">Q63378353</a></td>
+          <td><a href="https://protectedplanet.net/127878">127878</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=127878&amp;categories=&amp;descriptionlang=pt&amp;description=Estu%C3%A1rio%20do%20Sado" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Estuário do Sado (Sítio de Importância Comunitária)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378822">Q63378822</a></td>
+          <td><a href="https://protectedplanet.net/555531081">555531081</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0011">PTCON0011</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0011">PTCON0011</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.474425/-8.72593/pt">38° 28′ 28″ N, &#x2003;8° 43′ 33″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531081&amp;categories=&amp;descriptionlang=pt&amp;description=Estu%C3%A1rio%20do%20Sado%20%28S%C3%ADtio%20de%20Import%C3%A2ncia%20Comunit%C3%A1ria%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Estuário do Sado (Zona de Proteção Especial)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378814">Q63378814</a></td>
+          <td><a href="https://protectedplanet.net/555540885">555540885</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0011">PTZPE0011</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0011">PTZPE0011</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.458625/-8.722936/pt">38° 27′ 31″ N, &#x2003;8° 43′ 23″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540885&amp;categories=&amp;descriptionlang=pt&amp;description=Estu%C3%A1rio%20do%20Sado%20%28Zona%20de%20Prote%C3%A7%C3%A3o%20Especial%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Lagoa da Albufeira</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378352">Q63378352</a></td>
+          <td><a href="https://protectedplanet.net/127879">127879</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=127879&amp;categories=&amp;descriptionlang=pt&amp;description=Lagoa%20da%20Albufeira" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Lagoa da Sancha</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378438">Q63378438</a></td>
+          <td><a href="https://protectedplanet.net/555540888">555540888</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0014">PTZPE0014</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0014">PTZPE0014</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.023203/-8.838584/pt">38° 01′ 24″ N, &#x2003;8° 50′ 19″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540888&amp;categories=&amp;descriptionlang=pt&amp;description=Lagoa%20da%20Sancha" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Lagoa_de_Albufeira">Lagoa de Albufeira</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10315752">Q10315752</a></td>
+          <td><a href="https://protectedplanet.net/555531123">555531123</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0054">PTCON0054</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0054">PTCON0054</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.51194444/-9.17527778/pt">38° 33′ 28″ N, &#x2003;9° 08′ 29″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531123&amp;categories=Lagoa%20de%20Albufeira&amp;descriptionlang=pt&amp;description=Lagoa%20de%20Albufeira" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Lagoa de Santo André</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378423">Q63378423</a></td>
+          <td><a href="https://protectedplanet.net/555540887">555540887</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0013">PTZPE0013</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0013">PTZPE0013</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.083849/-8.802344/pt">38° 05′ 02″ N, &#x2003;8° 48′ 08″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540887&amp;categories=Special%20Protection%20Area%20of%20Lagoa%20de%20Santo%20Andr%C3%A9&amp;descriptionlang=pt&amp;description=Lagoa%20de%20Santo%20Andr%C3%A9" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Lagoa de St. André e Lagoa de Sancha</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378360">Q63378360</a></td>
+          <td><a href="https://protectedplanet.net/127880">127880</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=127880&amp;categories=&amp;descriptionlang=pt&amp;description=Lagoa%20de%20St.%20Andr%C3%A9%20e%20Lagoa%20de%20Sancha" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Lagoa Pequena</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378407">Q63378407</a></td>
+          <td><a href="https://protectedplanet.net/555540915">555540915</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0049">PTZPE0049</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0049">PTZPE0049</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.523535/-9.147435/pt">38° 31′ 25″ N, &#x2003;9° 08′ 51″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540915&amp;categories=&amp;descriptionlang=pt&amp;description=Lagoa%20Pequena" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Lagoas de Santo Andre e Sancha</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378379">Q63378379</a></td>
+          <td><a href="https://protectedplanet.net/555599536">555599536</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555599536&amp;categories=&amp;descriptionlang=pt&amp;description=Lagoas%20de%20Santo%20Andre%20e%20Sancha" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Mata_Nacional_dos_Medos">Mata Nacional dos Medos</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10327238">Q10327238</a></td>
+          <td><a href="https://protectedplanet.net/396297">396297</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.583795/-9.192743/pt">38° 35′ 02″ N, &#x2003;9° 11′ 34″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396297&amp;categories=&amp;descriptionlang=pt&amp;description=Mata%20Nacional%20dos%20Medos" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Paisagem_Protegida_da_Arriba_F%C3%B3ssil_da_Costa_de_Caparica">Paisagem Protegida da Arriba Fóssil da Costa de Caparica</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10343656">Q10343656</a></td>
+          <td><a href="https://protectedplanet.net/13341">13341</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.583116/-9.185382/pt">38° 34′ 59″ N, &#x2003;9° 11′ 07″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=13341&amp;categories=&amp;descriptionlang=pt&amp;description=Paisagem%20Protegida%20da%20Arriba%20F%C3%B3ssil%20da%20Costa%20de%20Caparica" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_da_Arr%C3%A1bida">Parque Natural da Arrábida</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q3049849">Q3049849</a></td>
+          <td><a href="https://protectedplanet.net/1340">1340</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.481472222222/-8.9893333333333/pt">38° 28′ 53″ N, &#x2003;8° 59′ 22″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=1340&amp;categories=Parque%20Natural%20da%20Arr%C3%A1bida&amp;descriptionlang=pt&amp;description=Parque%20Natural%20da%20Arr%C3%A1bida" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Natural_das_Lagoas_de_Santo_Andr%C3%A9_e_da_Sancha">Reserva Natural das Lagoas de Santo André e da Sancha</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10359752">Q10359752</a></td>
+          <td><a href="https://protectedplanet.net/388859">388859</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.099722/-8.794444/pt">38° 03′ 24″ N, &#x2003;8° 49′ 06″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=388859&amp;categories=Reserva%20Natural%20das%20Lagoas%20de%20Santo%20Andr%C3%A9%20e%20da%20Sancha&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20das%20Lagoas%20de%20Santo%20Andr%C3%A9%20e%20da%20Sancha" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Natural_do_Estu%C3%A1rio_do_Sado">Reserva Natural do Estuário do Sado</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q2145586">Q2145586</a></td>
+          <td><a href="https://protectedplanet.net/4722">4722</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.463109/-8.735177/pt">38° 27′ 47″ N, &#x2003;8° 44′ 07″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=4722&amp;categories=Reserva%20Natural%20do%20Estu%C3%A1rio%20do%20Sado&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20do%20Estu%C3%A1rio%20do%20Sado" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Viana do Castelo</summary>
+    <details><summary><h3>Viana do Castelo</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Côrno do Bico</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378520">Q63378520</a></td>
+          <td><a href="https://protectedplanet.net/555531109">555531109</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0040">PTCON0040</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0040">PTCON0040</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.906845/-8.532168/pt">41° 54′ 25″ N, &#x2003;8° 31′ 56″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531109&amp;categories=&amp;descriptionlang=pt&amp;description=C%C3%B4rno%20do%20Bico" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Estuários dos Rios Minho e Coura</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378437">Q63378437</a></td>
+          <td><a href="https://protectedplanet.net/555540876">555540876</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0001">PTZPE0001</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0001">PTZPE0001</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.920395/-8.77519/pt">41° 55′ 13″ N, &#x2003;8° 46′ 31″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540876&amp;categories=Estu%C3%A1rios%20dos%20Rios%20Minho%20e%20Coura%20in%20Portugal&amp;descriptionlang=pt&amp;description=Estu%C3%A1rios%20dos%20Rios%20Minho%20e%20Coura" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Lagoas de Bertiandos e de S. Pedro de Arcos</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378362">Q63378362</a></td>
+          <td><a href="https://protectedplanet.net/902879">902879</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=902879&amp;categories=&amp;descriptionlang=pt&amp;description=Lagoas%20de%20Bertiandos%20e%20de%20S.%20Pedro%20de%20Arcos" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Paisagem_Protegida_das_Lagoas_de_Bertiandos_e_S%C3%A3o_Pedro_de_Arco">Lagoas de Bertiandos e São Pedro de Arco</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q4895599">Q4895599</a></td>
+          <td><a href="https://protectedplanet.net/388858">388858</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.76461111/-8.63711111/pt">41° 45′ 58″ N, &#x2003;8° 38′ 12″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=388858&amp;categories=Lagoa%20de%20Bertiandos%20e%20S%C3%A3o%20Pedro%20de%20Arco&amp;descriptionlang=pt&amp;description=Lagoas%20de%20Bertiandos%20e%20S%C3%A3o%20Pedro%20de%20Arco" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Litoral Norte (Sítio de Importância Comunitária)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378827">Q63378827</a></td>
+          <td><a href="https://protectedplanet.net/555531087">555531087</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0017">PTCON0017</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0017">PTCON0017</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.579144/-8.802736/pt">41° 34′ 45″ N, &#x2003;8° 48′ 10″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531087&amp;categories=&amp;descriptionlang=pt&amp;description=Litoral%20Norte%20%28S%C3%ADtio%20de%20Import%C3%A2ncia%20Comunit%C3%A1ria%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Paisagem_Protegida_do_Corno_do_Bico">Paisagem Protegida do Corno do Bico</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q5171884">Q5171884</a></td>
+          <td><a href="https://protectedplanet.net/388857">388857</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.886585/-8.523481/pt">41° 53′ 12″ N, &#x2003;8° 31′ 25″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=388857&amp;categories=Corno%20do%20Bico&amp;descriptionlang=pt&amp;description=Paisagem%20Protegida%20do%20Corno%20do%20Bico" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Nacional_da_Peneda-Ger%C3%AAs">Parque Nacional da Peneda-Gerês</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q1473702">Q1473702</a></td>
+          <td><a href="https://protectedplanet.net/860">860</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.830713/-8.23867/pt">41° 49′ 51″ N, &#x2003;8° 14′ 19″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=860&amp;categories=Parque%20Nacional%20da%20Peneda-Ger%C3%AAs&amp;descriptionlang=pt&amp;description=Parque%20Nacional%20da%20Peneda-Ger%C3%AAs" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Rio_Lima">Rio Lima</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q14558">Q14558</a></td>
+          <td><a href="https://protectedplanet.net/555531090">555531090</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0020">PTCON0020</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0020">PTCON0020</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.68163/-8.83713/pt">41° 46′ 02″ N, &#x2003;8° 38′ 15″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531090&amp;categories=Rio%20Lima&amp;descriptionlang=pt&amp;description=Rio%20Lima" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Rio_Minho">Rio Minho</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q14554">Q14554</a></td>
+          <td><a href="https://protectedplanet.net/555531089">555531089</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/ES1140007">ES1140007</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=ES1140007">ES1140007</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/43.211388888889/-7.2811111111111/pt">41° 51′ 55″ N, &#x2003;8° 52′ 11″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531089&amp;categories=Minho%20River&amp;descriptionlang=pt&amp;description=Rio%20Minho" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Serra_de_Arga">Serra de Arga</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10370394">Q10370394</a></td>
+          <td><a href="https://protectedplanet.net/555531108">555531108</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0039">PTCON0039</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0039">PTCON0039</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.80608/-8.71369/pt">41° 49′ 00″ N, &#x2003;8° 43′ 22″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531108&amp;categories=Serra%20de%20Arga&amp;descriptionlang=pt&amp;description=Serra%20de%20Arga" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Serra do Gerês</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378429">Q63378429</a></td>
+          <td><a href="https://protectedplanet.net/555540877">555540877</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0002">PTZPE0002</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0002">PTZPE0002</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.883882/-8.254882/pt">41° 53′ 02″ N, &#x2003;8° 15′ 18″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540877&amp;categories=&amp;descriptionlang=pt&amp;description=Serra%20do%20Ger%C3%AAs" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Vila Real</summary>
+    <details><summary><h3>Vila Real</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Alvão/Marão</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378474">Q63378474</a></td>
+          <td><a href="https://protectedplanet.net/555531073">555531073</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0003">PTCON0003</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0003">PTCON0003</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.366106/-7.812141/pt">41° 21′ 58″ N, &#x2003;7° 48′ 44″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531073&amp;categories=&amp;descriptionlang=pt&amp;description=Alv%C3%A3o%2FMar%C3%A3o" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_do_Alv%C3%A3o">Parque Natural do Alvão</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q3364602">Q3364602</a></td>
+          <td><a href="https://protectedplanet.net/13989">13989</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.3698/-7.81768/pt">41° 22′ 09″ N, &#x2003;7° 49′ 03″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=13989&amp;categories=Parque%20Natural%20do%20Alv%C3%A3o&amp;descriptionlang=pt&amp;description=Parque%20Natural%20do%20Alv%C3%A3o" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Viseu</summary>
+    <details><summary><h3>Viseu</h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Carregal do Sal</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378478">Q63378478</a></td>
+          <td><a href="https://protectedplanet.net/555531097">555531097</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0027">PTCON0027</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0027">PTCON0027</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.414612/-7.880093/pt">40° 24′ 53″ N, &#x2003;7° 52′ 48″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531097&amp;categories=&amp;descriptionlang=pt&amp;description=Carregal%20do%20Sal" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Bot%C3%A2nica_de_Cambarinho">Reserva Botânica de Cambarinho</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10359649">Q10359649</a></td>
+          <td><a href="https://protectedplanet.net/555531086">555531086</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0016">PTCON0016</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0016">PTCON0016</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.6701/-8.197987/pt">40° 40′ 12″ N, &#x2003;8° 11′ 53″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531086&amp;categories=Cambarinho%20Botanical%20Reserve&amp;descriptionlang=pt&amp;description=Reserva%20Bot%C3%A2nica%20de%20Cambarinho" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Rio_Paiva">Rio Paiva</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q14617">Q14617</a></td>
+          <td><a href="https://protectedplanet.net/555531127">555531127</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0059">PTCON0059</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0059">PTCON0059</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.06527778/-8.26111111/pt">40° 54′ 48″ N, &#x2003;7° 57′ 43″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531127&amp;categories=Rio%20Paiva&amp;descriptionlang=pt&amp;description=Rio%20Paiva" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-  </details>
-  <details open="true"><summary>Ilhas</summary>
-    <details><summary>Madeira</summary>
+    <details><summary><h3><strong>Outros</strong></h3></summary>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Wikidata</th>
+          <th><acronym title="World Database on Protected Areas">WDPA</acronym></th>
+          <th><acronym title="Common Database on Designated Areas">CDDA</acronym></th>
+          <th>Rede Natura 2000</th>
+          <th>Coordenadas</th>
+          <th>Carrega a tua foto!</th>
+        </tr>
+        <tr>
+          <td>Estuário do Tejo</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378359">Q63378359</a></td>
+          <td><a href="https://protectedplanet.net/68145">68145</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=68145&amp;categories=&amp;descriptionlang=pt&amp;description=Estu%C3%A1rio%20do%20Tejo" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Estuário do Tejo (Sítio de Importância Comunitária)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378834">Q63378834</a></td>
+          <td><a href="https://protectedplanet.net/555531079">555531079</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0009">PTCON0009</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0009">PTCON0009</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.828091/-8.946275/pt">38° 49′ 41″ N, &#x2003;8° 56′ 47″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531079&amp;categories=&amp;descriptionlang=pt&amp;description=Estu%C3%A1rio%20do%20Tejo%20%28S%C3%ADtio%20de%20Import%C3%A2ncia%20Comunit%C3%A1ria%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Estuário do Tejo (Zona de Proteção Especial)</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378813">Q63378813</a></td>
+          <td><a href="https://protectedplanet.net/555540884">555540884</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0010">PTZPE0010</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0010">PTZPE0010</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.8283/-8.9458/pt">38° 49′ 42″ N, &#x2003;8° 56′ 45″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540884&amp;categories=&amp;descriptionlang=pt&amp;description=Estu%C3%A1rio%20do%20Tejo%20%28Zona%20de%20Prote%C3%A7%C3%A3o%20Especial%29" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Natural_do_Estu%C3%A1rio_do_Tejo">Reserva Natural do Estuário do Tejo</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q7675357">Q7675357</a></td>
+          <td><a href="https://protectedplanet.net/1339">1339</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.821/-8.993/pt">38° 49′ 58″ N, &#x2003;8° 59′ 13″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=1339&amp;categories=Reserva%20Natural%20do%20Estu%C3%A1rio%20do%20Tejo&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20do%20Estu%C3%A1rio%20do%20Tejo" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_da_Biosfera_Transfronteiri%C3%A7a_Ger%C3%AAs-Xur%C3%A9s">Reserva da Biosfera Transfronteiriça Gerês-Xurés</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q22680843">Q22680843</a></td>
+          <td><a href="https://protectedplanet.net/555547559">555547559</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.95/-8.25/pt">41° 57′ N, &#x2003;8° 15′ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555547559&amp;categories=&amp;descriptionlang=pt&amp;description=Reserva%20da%20Biosfera%20Transfronteiri%C3%A7a%20Ger%C3%AAs-Xur%C3%A9s" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_do_Douro_Internacional">Parque Natural do Douro Internacional</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q5842992">Q5842992</a></td>
+          <td><a href="https://protectedplanet.net/169019">169019</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.205246/-6.734633/pt">41° 12′ 19″ N, &#x2003;6° 44′ 05″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=169019&amp;categories=Parque%20Natural%20do%20Douro%20Internacional&amp;descriptionlang=pt&amp;description=Parque%20Natural%20do%20Douro%20Internacional" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_do_Litoral_Norte">Parque Natural do Litoral Norte</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q7058679">Q7058679</a></td>
+          <td><a href="https://protectedplanet.net/388854">388854</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.53786/-8.816238/pt">41° 32′ 16″ N, &#x2003;8° 48′ 58″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=388854&amp;categories=Parque%20Natural%20do%20Litoral%20Norte&amp;descriptionlang=pt&amp;description=Parque%20Natural%20do%20Litoral%20Norte" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Reserva_Natural_da_Serra_da_Malcata">Reserva Natural da Serra da Malcata</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q918892">Q918892</a></td>
+          <td><a href="https://protectedplanet.net/5808">5808</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/5808">5808</a></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.252371/-7.040756/pt">40° 15′ 09″ N, &#x2003;7° 02′ 27″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=5808&amp;categories=Reserva%20Natural%20da%20Serra%20da%20Malcata&amp;descriptionlang=pt&amp;description=Reserva%20Natural%20da%20Serra%20da%20Malcata" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Rio_Vouga">Rio Vouga</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q15653">Q15653</a></td>
+          <td><a href="https://protectedplanet.net/555531096">555531096</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0026">PTCON0026</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0026">PTCON0026</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.869361111111/-7.5790277777778/pt">40° 40′ 59″ N, &#x2003;8° 40′ 01″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531096&amp;categories=Vouga%20River&amp;descriptionlang=pt&amp;description=Rio%20Vouga" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Douro Internacional e Vale do Águeda</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378392">Q63378392</a></td>
+          <td><a href="https://protectedplanet.net/555540906">555540906</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0038">PTZPE0038</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0038">PTZPE0038</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.09544/-6.766986/pt">41° 05′ 44″ N, &#x2003;6° 46′ 01″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540906&amp;categories=&amp;descriptionlang=pt&amp;description=Douro%20Internacional%20e%20Vale%20do%20%C3%81gueda" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Rios Sabor e Maçãs</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378439">Q63378439</a></td>
+          <td><a href="https://protectedplanet.net/555540905">555540905</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTZPE0037">PTZPE0037</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTZPE0037">PTZPE0037</a></td>
+          <td></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555540905&amp;categories=&amp;descriptionlang=pt&amp;description=Rios%20Sabor%20e%20Ma%C3%A7%C3%A3s" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Rios Sabor e Maçãs</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378835">Q63378835</a></td>
+          <td><a href="https://protectedplanet.net/555531091">555531091</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0021">PTCON0021</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0021">PTCON0021</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.475693/-6.617075/pt">41° 31′ 10″ N, &#x2003;6° 39′ 40″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531091&amp;categories=&amp;descriptionlang=pt&amp;description=Rios%20Sabor%20e%20Ma%C3%A7%C3%A3s" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Crista_Gorringe">Banco de Gorringe</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q1538407">Q1538407</a></td>
+          <td><a href="https://protectedplanet.net/555623591">555623591</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0062">PTCON0062</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0062">PTCON0062</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/36.578708/-11.345324/pt">36° 34′ 43″ N, &#x2003;11° 20′ 43″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555623591&amp;categories=&amp;descriptionlang=pt&amp;description=Banco%20de%20Gorringe" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Cabrela</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378501">Q63378501</a></td>
+          <td><a href="https://protectedplanet.net/555531103">555531103</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0033">PTCON0033</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0033">PTCON0033</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.484904/-8.363084/pt">38° 29′ 06″ N, &#x2003;8° 21′ 47″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531103&amp;categories=&amp;descriptionlang=pt&amp;description=Cabrela" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Floresta Laurissilva na Madeira</td>
+          <td><a href="https://www.wikidata.org/wiki/Q11257230">Q11257230</a></td>
+          <td><a href="https://protectedplanet.net/198300">198300</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/32.76666667/-17/pt">32° 46′ 00″ N, &#x2003;17° 00′ 00″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=198300&amp;categories=Laurisilva%20forests%20of%20Madeira&amp;descriptionlang=pt&amp;description=Floresta%20Laurissilva%20na%20Madeira" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Maceda - Praia da Vieira</td>
+          <td><a href="https://www.wikidata.org/wiki/Q96757842">Q96757842</a></td>
+          <td><a href="https://protectedplanet.net/555703325">555703325</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.1167/-8.9394/pt">40° 07′ 00″ N, &#x2003;8° 56′ 22″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555703325&amp;categories=&amp;descriptionlang=pt&amp;description=Maceda%20-%20Praia%20da%20Vieira" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Monumento_Natural_da_Pedra_da_Mua">Monumento Natural da Pedra da Mua</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10332128">Q10332128</a></td>
+          <td><a href="https://protectedplanet.net/169023">169023</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.421621/-9.216737/pt">38° 25′ 37″ N, &#x2003;9° 12′ 56″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=169023&amp;categories=&amp;descriptionlang=pt&amp;description=Monumento%20Natural%20da%20Pedra%20da%20Mua" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Monumento_Natural_da_Pedreira_do_Avelino">Monumento Natural da Pedreira do Avelino</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10332129">Q10332129</a></td>
+          <td><a href="https://protectedplanet.net/169022">169022</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.454142/-9.123209/pt">38° 27′ 15″ N, &#x2003;9° 07′ 24″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=169022&amp;categories=&amp;descriptionlang=pt&amp;description=Monumento%20Natural%20da%20Pedreira%20do%20Avelino" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Monumento_Natural_de_Carenque">Monumento Natural de Carenque</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10332131">Q10332131</a></td>
+          <td><a href="https://protectedplanet.net/169020">169020</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.774334/-9.255859/pt">38° 46′ 27″ N, &#x2003;9° 15′ 22″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=169020&amp;categories=Monumento%20Natural%20de%20Carenque&amp;descriptionlang=pt&amp;description=Monumento%20Natural%20de%20Carenque" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Monumento_Natural_dos_Lagosteiros">Monumento Natural dos Lagosteiros</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10332135">Q10332135</a></td>
+          <td><a href="https://protectedplanet.net/169021">169021</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/38.421927/-9.215252/pt">38° 25′ 19″ N, &#x2003;9° 12′ 55″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=169021&amp;categories=&amp;descriptionlang=pt&amp;description=Monumento%20Natural%20dos%20Lagosteiros" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Nisa / Lage da Prata</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378505">Q63378505</a></td>
+          <td><a href="https://protectedplanet.net/555531113">555531113</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0044">PTCON0044</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0044">PTCON0044</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.480756/-7.682801/pt">39° 28′ 51″ N, &#x2003;7° 40′ 58″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531113&amp;categories=&amp;descriptionlang=pt&amp;description=Nisa%20%2F%20Lage%20da%20Prata" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_da_Serra_da_Estrela">Parque Natural da Serra da Estrela</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q2581550">Q2581550</a></td>
+          <td><a href="https://protectedplanet.net/1338">1338</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.418378/-7.535387/pt">40° 25′ 15″ N, &#x2003;7° 31′ 59″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=1338&amp;categories=Serra%20da%20Estrela%20Natural%20Park&amp;descriptionlang=pt&amp;description=Parque%20Natural%20da%20Serra%20da%20Estrela" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Parque_Natural_do_Tejo_Internacional">Parque Natural do Tejo Internacional</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q3321094">Q3321094</a></td>
+          <td><a href="https://protectedplanet.net/388861">388861</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.713518/-7.224084/pt">39° 42′ 49″ N, &#x2003;7° 13′ 27″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=388861&amp;categories=Parque%20Natural%20do%20Tejo%20Internacional&amp;descriptionlang=pt&amp;description=Parque%20Natural%20do%20Tejo%20Internacional" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Paul da Tornada</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378633">Q63378633</a></td>
+          <td><a href="https://protectedplanet.net/555514083">555514083</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.448194/-9.134894/pt">39° 26′ 53″ N, &#x2003;9° 08′ 06″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555514083&amp;categories=&amp;descriptionlang=pt&amp;description=Paul%20da%20Tornada" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Peneda/Gerês</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378514">Q63378514</a></td>
+          <td><a href="https://protectedplanet.net/555531072">555531072</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0001">PTCON0001</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0001">PTCON0001</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.7886/-8.1219/pt">41° 47′ 19″ N, &#x2003;8° 07′ 19″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531072&amp;categories=&amp;descriptionlang=pt&amp;description=Peneda%2FGer%C3%AAs" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/Monumento_Natural_das_Portas_de_R%C3%B3d%C3%A3o">Portas de Ródão</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q10332132">Q10332132</a></td>
+          <td><a href="https://protectedplanet.net/396299">396299</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/39.647777777778/-7.6813888888889/pt">39° 38′ 52″ N, &#x2003;7° 40′ 53″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396299&amp;categories=Portas%20de%20R%C3%B3d%C3%A3o&amp;descriptionlang=pt&amp;description=Portas%20de%20R%C3%B3d%C3%A3o" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/S%C3%ADtio_Classificado_da_Rocha_da_Pena">Rocha da Pena</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378557">Q63378557</a></td>
+          <td><a href="https://protectedplanet.net/396331">396331</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/37.253795/-8.098899/pt">37° 15′ 14″ N, &#x2003;8° 05′ 56″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=396331&amp;categories=&amp;descriptionlang=pt&amp;description=Rocha%20da%20Pena" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Romeu</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378504">Q63378504</a></td>
+          <td><a href="https://protectedplanet.net/555531112">555531112</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0043">PTCON0043</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0043">PTCON0043</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.499799/-7.075264/pt">41° 29′ 59″ N, &#x2003;7° 04′ 31″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531112&amp;categories=&amp;descriptionlang=pt&amp;description=Romeu" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Samil</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378503">Q63378503</a></td>
+          <td><a href="https://protectedplanet.net/555531110">555531110</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0041">PTCON0041</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0041">PTCON0041</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.782975/-6.745517/pt">41° 46′ 59″ N, &#x2003;6° 44′ 44″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531110&amp;categories=&amp;descriptionlang=pt&amp;description=Samil" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://pt.wikipedia.org/wiki/S%C3%ADtio_Classificado_da_Malcata">Sítio Classificado da Malcata</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q30933780">Q30933780</a></td>
+          <td><a href="https://protectedplanet.net/555531074">555531074</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0004">PTCON0004</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0004">PTCON0004</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/40.358498/-6.965172/pt">40° 21′ 31″ N, &#x2003;6° 57′ 55″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531074&amp;categories=Reserva%20Natural%20da%20Serra%20da%20Malcata&amp;descriptionlang=pt&amp;description=S%C3%ADtio%20Classificado%20da%20Malcata" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Vale do Tua</td>
+          <td><a href="https://www.wikidata.org/wiki/Q63378617">Q63378617</a></td>
+          <td><a href="https://protectedplanet.net/555514084">555514084</a></td>
+          <td></td>
+          <td></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.332021/-7.316175/pt">41° 19′ 55″ N, &#x2003;7° 18′ 58″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555514084&amp;categories=&amp;descriptionlang=pt&amp;description=Vale%20do%20Tua" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+        <tr>
+          <td>Valongo</td>
+          <td><a href="https://www.wikidata.org/wiki/Q55080946">Q55080946</a></td>
+          <td><a href="https://protectedplanet.net/555531094">555531094</a></td>
+          <td><a href="http://eunis.eea.europa.eu/sites/PTCON0024">PTCON0024</a></td>
+          <td><a href="http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site=PTCON0024">PTCON0024</a></td>
+          <td><a href="https://pt.wikipedia.org/wiki/Especial:Map/13/41.1468/-8.4693/pt">41° 08′ 48″ N, &#x2003;8° 28′ 09″ O</a></td>
+          <td><a href="https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wle-pt&amp;id=555531094&amp;categories=Valongo%20%28site%20of%20community%20importance%29&amp;descriptionlang=pt&amp;description=Valongo" title="Carrega a tua foto!">📷</a></td>
+        </tr>
+      </table>
     </details>
-    <details><summary>Açores</summary>
+  </div>
+  <div id="ilhas">
+    <h2>Ilhas</h2>
+    <details><summary><h3>Madeira</h3></summary>
+      Ver artigo&#32;principal: <a href="https://pt.wikipedia.org/wiki/%C3%81reas_protegidas_da_Regi%C3%A3o_Aut%C3%B3noma_da_Madeira">
+        Áreas protegidas da Região Autónoma da Madeira
+      </a>
     </details>
-  </details>
+    <details><summary><h3>Açores</h3></summary>
+      Ver artigo&#32;principal: <a href="https://pt.wikipedia.org/wiki/%C3%81reas_protegidas_da_Regi%C3%A3o_Aut%C3%B3noma_dos_A%C3%A7ores">
+        Áreas protegidas da Região Autónoma dos Açores
+      </a>
+    </details>
+  </div>
 </body>
+
 </html>
