@@ -8,12 +8,16 @@
   <style>
     body { line-height: 1.5em; font-family: sans-serif; font-weight: 300; }
     h1 { line-height: 1.25em; }
-    details { margin-left: 1em; }
     summary:focus { outline: none; }
     summary { cursor: pointer; background: #c2dde8; padding-left: 0.5em; }
     summary > h3, summary > h4 { display: inline-block; margin: 0.2em 0; }
-    details { border-left: 1px solid slategray; margin-top: 0.5em; margin-bottom: 0.5em; background: rgba(100, 200, 255, 0.1); }
-    table { border-collapse: collapse; margin: 0.5em; width: calc(100% - 0.5em); }
+    details {
+      border: 1px solid LightSteelBlue;
+      margin: 0.5em;
+      background: rgba(100, 200, 255, 0.1);
+      overflow:auto; /* Contain the margins of the tables inside */
+    }
+    table { border-collapse: collapse; margin: 0.5em; width: calc(100% - 1em); }
     th, td { padding-left: .5em; padding-right: 1em; text-align: left; border: 1px solid #999; }
     th { background: #eee; font-weight: bold; }
     td { background: white; }
