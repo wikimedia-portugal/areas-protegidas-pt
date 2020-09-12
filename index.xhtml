@@ -18,13 +18,13 @@
       overflow:auto; /* Contain the margins of the tables inside */
     }
     table { border-collapse: collapse; margin: 0.5em; width: calc(100% - 1em); }
-    th, td { padding-left: .5em; padding-right: 1em; text-align: left; border: 1px solid #999; }
+    th, td { padding: 0.1em .5em; text-align: left; border: 1px solid #999; }
     th { background: #eee; font-weight: bold; }
     td { background: white; }
     a { color: RoyalBlue; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    a[href*=uploadWizard] { font-size: 2em; }
-    a[href*=uploadWizard]:hover {  text-decoration: none; }
+    a[href*=uploadWizard] { font-size: 2em; vertical-align: middle; display: inline-block; margin: 0.1em; }
+    a[href*=uploadWizard]:hover { text-decoration: none; }
     td:last-child { text-align: center; }
     acronym { text-decoration: none; cursor: help; border-bottom: 1px dotted #666; }
     details > p { margin-left: 0.5em; }
@@ -38,6 +38,7 @@
     @media (max-width: 600px) {
       th:nth-child(2) { display: none; }
       td:nth-child(2) { display: none; }
+      body { font-size: 90%; }
     }
   </style>
 </head>
