@@ -1,0 +1,56 @@
+/* Clean table style */
+td { border: 1px solid silver; padding: 0 5px; }
+table { border-collapse: collapse; }
+
+/* Temporarily hide the monument type column
+   (until the contents are converted into compact tags) */
+th:nth-child(2), td:nth-child(2) { display: none; }
+
+/* Icons */
+td:nth-child(3), td:nth-child(4), td:nth-child(5) { text-align: center; }
+a[href^="https://www.wikidata.org/wiki/Q"]::after {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/89/WD-ico.gif);
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: "";
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+}
+a[href*="openstreetmap"] {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Toicon-icon-avocado-locate.svg/16px-Toicon-icon-avocado-locate.svg.png);
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: "";
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+}
+a[href*="special:uploadWizard?campaign=wlm-pt"]::after {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Camera-photo_Upload.svg/24px-Camera-photo_Upload.svg.png);
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    content: "";
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+}
+
+/* Monument type tags */
+abbr {
+    text-decoration: none;
+    padding: 0 0.1em;
+    font-size: 80%;
+    background: #eee;
+    border: 1px solid silver;
+    border-radius: 3px;
+    cursor: default;
+}
+abbr[title^="Em "], abbr[title="Sem protecção legal"] { opacity: 0.4; }
+
+/* SIPA / DGPC links */
+a[href^="http://www.patrimoniocultural.gov.pt/"],
+a[href^="http://www.monumentos.gov.pt/"] {
+    font-size: 80%;
+    color: #369;
+}
