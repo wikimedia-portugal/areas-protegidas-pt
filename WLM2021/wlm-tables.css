@@ -6,6 +6,10 @@ table { border-collapse: collapse; }
    (until the contents are converted into compact tags) */
 th:nth-child(2), td:nth-child(2) { display: none; }
 
+/* Temporarily hide the table header
+   (we might decide to bring it back again, with better styling) */
+th { display: none; }
+
 /* Icons */
 td:nth-child(3), td:nth-child(4), td:nth-child(5) { text-align: center; }
 a[href^="https://www.wikidata.org/wiki/Q"]::after {
