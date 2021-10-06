@@ -51,16 +51,16 @@ endpoint_url = "https://query.wikidata.org/sparql"
 
 def main(distrito):
     endpoint_url = "https://query.wikidata.org/sparql"
-    query1 = '''SELECT DISTINCT ?item ?itemLabel ?idwlm ?localLabel ?municipioLabel ?fonte ?cat ?cats ?button ?coord (GROUP_CONCAT(DISTINCT ?tipoLabel ;separator=", ") AS ?tipos) 
-    (GROUP_CONCAT(DISTINCT ?classLabel ;separator=", ") AS ?classes) 
+    query1 = '''SELECT DISTINCT ?item ?itemLabel ?idwlm ?localLabel ?municipioLabel ?fonte ?cat ?cats ?button ?coord (GROUP_CONCAT(DISTINCT ?tipoLabel ;separator=", ") AS ?tipos)
+    (GROUP_CONCAT(DISTINCT ?classLabel ;separator=", ") AS ?classes)
     WITH {
       SELECT DISTINCT ?item ?local ?municipio ?coord WHERE {
         { ?item wdt:P131 ?local.
-         ?local wdt:P131 ?municipio. 
+         ?local wdt:P131 ?municipio.
          ?municipio wdt:P131 wd:Q210527. } # itens ao nível de freguesia
         UNION
         { ?item wdt:P131 ?local.
-         ?local wdt:P131 wd:Q210527. 
+         ?local wdt:P131 wd:Q210527.
     BIND(?local AS ?municipio ) } # itens ao nível de concelho
         UNION
         { ?item wdt:P131 wd:'''
@@ -68,32 +68,32 @@ def main(distrito):
 
       }
     } as %results
-    WHERE {           
+    WHERE {
       INCLUDE %results
       { ?item wdt:P2186 ?idwlm.
         ?item wdt:P625 ?coord.}  # IDWLM
 
       OPTIONAL { ?item wdt:P31 ?tipo. FILTER ( ?tipo != wd:Q210272)} # Tipo
       OPTIONAL { ?item wdt:P1435 ?class. } # Classificação
-      OPTIONAL { ?item wdt:P1702 ?id1. } # ID DGPC 
+      OPTIONAL { ?item wdt:P1702 ?id1. } # ID DGPC
       OPTIONAL { ?item wdt:P1700 ?id2. } # ID SIPA
-      {BIND (CONCAT('<a href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/',?id1," ",">DGPC</a>]") as ?url1)}
-      {BIND (CONCAT('<a href="http://www.monumentos.gov.pt/Site/APP_PagesUser/SIPA.aspx?id=',?id2," ",">SIPA</a>]") as ?url2)}
-      {BIND (CONCAT(COALESCE( ?url1,''), COALESCE( CONCAT(IF (BOUND (?url1),'<br>',''), ?url2),'')) AS ?fonte)}
+      {BIND (CONCAT('<a href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/', ?id1, '"', '>DGPC</a>') as ?url1)}
+      {BIND (CONCAT('<a href="http://www.monumentos.gov.pt/Site/APP_PagesUser/SIPA.aspx?id=', ?id2, '"', '>SIPA</a>') as ?url2)}
+      {BIND (CONCAT(COALESCE( ?url1,''), COALESCE( CONCAT(IF (BOUND (?url1),'<br/>',''), ?url2),'')) AS ?fonte)}
       OPTIONAL {?item wdt:P373 ?cat.}
       {BIND (CONCAT('Images from Wiki Loves Monuments 2021 in Portugal - Aveiro',IF(BOUND(?cat),CONCAT('{{!}}',?cat),'')) AS ?cats)}
     BIND(SUBSTR(STR(?item), 32 ) AS ?id)
       OPTIONAL { ?item schema:description ?descr.
       FILTER((LANG(?descr)) = 'pt') }
-      {BIND (CONCAT("https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wlm-pt&id=", ?id, "&descriptionlang=pt&description=", ENCODE_FOR_URI (?itemLabel), ENCODE_FOR_URI (IF(BOUND(?descr),CONCAT(" - ",?descr),"")), "&categories=", ENCODE_FOR_URI (?cats)) AS ?button)}
+      {BIND (CONCAT("https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wlm-pt&amp;id=", ?id, "&amp;descriptionlang=pt&amp;description=", ENCODE_FOR_URI (?itemLabel), ENCODE_FOR_URI (IF(BOUND(?descr),CONCAT(" - ",?descr),"")), "&amp;categories=", ENCODE_FOR_URI (?cats)) AS ?button)}
 
-      SERVICE wikibase:label { bd:serviceParam wikibase:language 'pt,pt-br,en'. 
+      SERVICE wikibase:label { bd:serviceParam wikibase:language 'pt,pt-br,en'.
                              ?class rdfs:label ?classLabel.
                              ?tipo rdfs:label ?tipoLabel.
                              ?item rdfs:label ?itemLabel.
                              ?local rdfs:label ?localLabel.
-                             ?municipio rdfs:label ?municipioLabel. 
-    }    
+                             ?municipio rdfs:label ?municipioLabel.
+    }
     }
     GROUP BY ?item ?itemLabel ?idwlm ?localLabel ?municipioLabel ?id1 ?fonte ?cat ?cats ?button ?coord
     ORDER BY ?municipioLabel ?localLabel ?itemLabel '''
