@@ -45,6 +45,7 @@ distritos = "Q207199", "Q210527", "Q225189", "Q244510", "Q244512", "Q244517", "Q
 import sys
 from SPARQLWrapper import SPARQLWrapper, JSON
 import re
+import textwrap
 
 endpoint_url = "https://query.wikidata.org/sparql"
 
@@ -99,20 +100,20 @@ def main(distrito):
     ORDER BY ?municipioLabel ?localLabel ?itemLabel '''
 
     _hmtl = '''<tr>
-                <td><a href="https://pt.wikipedia.org/wiki/{nome}">
-                    {nome}</a></td>
-                <td><abbr title="{tipo}">MN</abbr></td>
-                <td><a href="https://pt.wikipedia.org/wiki/{municipio}">
-                    {municipio}</a></td>
-                <td><a title="Item no Wikidata: {wd}" href="https://www.wikidata.org/wiki/{wd}"></a></td>
-                <td><a title="Localização no mapa" href="https://www.openstreetmap.org/?mlat={lat}&amp;mlon={lon}&amp;zoom=13"></a></td>
-                <td><a href="{button}"></a></td>
-                <td>
-                    {fontes}
-                </td>
-            </tr>'''
+            <td><a href="https://pt.wikipedia.org/wiki/{nome}">
+                {nome}</a></td>
+            <td><abbr title="{tipo}">MN</abbr></td>
+            <td><a href="https://pt.wikipedia.org/wiki/{municipio}">
+                {municipio}</a></td>
+            <td><a title="Item no Wikidata: {wd}" href="https://www.wikidata.org/wiki/{wd}"></a></td>
+            <td><a title="Localização no mapa" href="https://www.openstreetmap.org/?mlat={lat}&amp;mlon={lon}&amp;zoom=13"></a></td>
+            <td><a href="{button}"></a></td>
+            <td>
+                {fontes}
+            </td>
+        </tr>'''
 
-    tables = '''<!DOCTYPE html>
+    tables = textwrap.dedent('''<!DOCTYPE html>
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
     <head>
         <meta charset="utf-8" />
@@ -130,7 +131,7 @@ def main(distrito):
                 <th>Mapa</th>
                 <th>Carrega as tuas fotos!</th>
                 <th>Fonte</th>
-            </tr>'''
+            </tr>''')
 
     def get_results(endpoint_url, query):
         user_agent = "WDQS-example Python/%s.%s" % (sys.version_info[0], sys.version_info[1])
@@ -175,9 +176,10 @@ def main(distrito):
             tables = tables + monumento
 
     print("\n\n\n\::::\n")
-    tables = tables + '''    </table>
+    tables = tables + textwrap.dedent('''
+        </table>
     </body>
-    </html>'''
+    </html>''')
     print(tables)
 
     import os.path
