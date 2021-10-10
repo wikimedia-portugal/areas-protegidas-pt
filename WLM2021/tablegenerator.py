@@ -47,7 +47,7 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 import re
 import urllib.parse
 import os
-
+import html
 
 
 endpoint_url = "https://query.wikidata.org/sparql"
@@ -102,7 +102,7 @@ GROUP BY ?item ?itemLabel ?idwlm ?localLabel ?municipioLabel ?id1 ?fonte ?cat ?c
 ORDER BY ?municipioLabel ?localLabel ?itemLabel '''
 
 _hmtl = '''<tr>
-            <td><a href="https://pt.wikipedia.org/wiki/{nome_safe}">{nome}</a></td>
+            <td><a href="https://pt.wikipedia.org/wiki/{nome_url}">{nome_label}</a></td>
             <td><abbr title="{tipo}">MN</abbr></td>
             <td><a href="https://pt.wikipedia.org/wiki/{municipio}">{municipio}</a></td>
             <td><a title="Item no Wikidata: {wd}" href="https://www.wikidata.org/wiki/{wd}"></a></td>
@@ -152,8 +152,8 @@ def main(distrito,tables):
     print ("\n\n----",query,"\n-------\n\n")
     for result in results["results"]["bindings"]:
 
-        nome = result['itemLabel']['value']
-        nome_safe = urllib.parse.quote(result['itemLabel']['value'])
+        nome_label = html.escape(result['itemLabel']['value'])
+        nome_url = urllib.parse.quote(result['itemLabel']['value'])
         tipo = result['tipos']['value']
         wd = result['item']['value'].split("/entity/")[1]
         coord = result['coord']['value']
@@ -165,7 +165,7 @@ def main(distrito,tables):
             municipio = "indefinido"
 
         button = button.replace(r"%7B%7B%21%7D%7D", "|")
-        print(nome, tipo, wd, coord, button, fonte, municipio)
+        print(result['itemLabel']['value'], tipo, wd, coord, button, fonte, municipio)
         try:
             _coord = coord.split("(")[1].split(")"[0])
 
@@ -178,9 +178,8 @@ def main(distrito,tables):
             lat = 0
             lon = 0
 
-        monumento = _hmtl.format(nome=nome, nome_safe=nome_safe, tipo=tipo, municipio=municipio, wd=wd, lat=lat,
-                                 lon=lon, button=button,
-                                 fontes=fonte)
+        monumento = _hmtl.format(nome_label=nome_label, nome_url=nome_url, tipo=tipo, municipio=municipio, wd=wd,
+                                 lat=lat, lon=lon, button=button, fontes=fonte)
 
         table = table + monumento
 
