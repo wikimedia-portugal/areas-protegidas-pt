@@ -45,66 +45,66 @@ distritos = "Q207199", "Q210527", "Q225189", "Q244510", "Q244512", "Q244517", "Q
 import sys
 from SPARQLWrapper import SPARQLWrapper, JSON
 import re
-import textwrap
+import urllib.parse
+import os
+
+
 
 endpoint_url = "https://query.wikidata.org/sparql"
+query1 = '''SELECT DISTINCT ?item ?itemLabel ?idwlm ?localLabel ?municipioLabel ?fonte ?cat ?cats ?button ?coord (GROUP_CONCAT(DISTINCT ?tipoLabel ;separator=", ") AS ?tipos)
+(GROUP_CONCAT(DISTINCT ?classLabel ;separator=", ") AS ?classes)
+WITH {
+  SELECT DISTINCT ?item ?local ?municipio ?coord WHERE {
+    { ?item wdt:P131 ?local.
+     ?local wdt:P131 ?municipio.
+     ?municipio wdt:P131 wd:'''
+query2 = '''. } # itens ao nível de freguesia
+    UNION
+    { ?item wdt:P131 ?local.
+     ?local wdt:P131 wd:'''
+query3 = '''.
+BIND(?local AS ?municipio ) } # itens ao nível de concelho
+    UNION
+    { ?item wdt:P131 wd:'''
+query4 = '''. } # itens ao nível da região
 
+  }
+} as %results
+WHERE {
+  INCLUDE %results
+  { ?item wdt:P2186 ?idwlm.
+    ?item wdt:P625 ?coord.}  # IDWLM
 
-def main(distrito):
-    endpoint_url = "https://query.wikidata.org/sparql"
-    query1 = '''SELECT DISTINCT ?item ?itemLabel ?idwlm ?localLabel ?municipioLabel ?fonte ?cat ?cats ?button ?coord (GROUP_CONCAT(DISTINCT ?tipoLabel ;separator=", ") AS ?tipos)
-    (GROUP_CONCAT(DISTINCT ?classLabel ;separator=", ") AS ?classes)
-    WITH {
-      SELECT DISTINCT ?item ?local ?municipio ?coord WHERE {
-        { ?item wdt:P131 ?local.
-         ?local wdt:P131 ?municipio.
-         ?municipio wdt:P131 wd:Q210527. } # itens ao nível de freguesia
-        UNION
-        { ?item wdt:P131 ?local.
-         ?local wdt:P131 wd:Q210527.
-    BIND(?local AS ?municipio ) } # itens ao nível de concelho
-        UNION
-        { ?item wdt:P131 wd:'''
-    query2 = '''. } # itens ao nível da região
+  OPTIONAL { ?item wdt:P31 ?tipo. FILTER ( ?tipo != wd:Q210272)} # Tipo
+  OPTIONAL { ?item wdt:P1435 ?class. } # Classificação
+  OPTIONAL { ?item wdt:P1702 ?id1. } # ID DGPC
+  OPTIONAL { ?item wdt:P1700 ?id2. } # ID SIPA
+  {BIND (CONCAT('<a href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/', ?id1, '"', '>DGPC</a>') as ?url1)}
+  {BIND (CONCAT('<a href="http://www.monumentos.gov.pt/Site/APP_PagesUser/SIPA.aspx?id=', ?id2, '"', '>SIPA</a>') as ?url2)}
+  {BIND (CONCAT(COALESCE( ?url1,''), COALESCE( CONCAT(IF (BOUND (?url1),'<br/>',''), ?url2),'')) AS ?fonte)}
+  OPTIONAL {?item wdt:P373 ?cat.}
+  {BIND (CONCAT('Images from Wiki Loves Monuments 2021 in Portugal - '''
+query5 = '''',IF(BOUND(?cat),CONCAT('{{!}}',?cat),'')) AS ?cats)}
+BIND(SUBSTR(STR(?item), 32 ) AS ?id)
+  OPTIONAL { ?item schema:description ?descr.
+  FILTER((LANG(?descr)) = 'pt') }
+  {BIND (CONCAT("https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wlm-pt&amp;id=", ?id, "&amp;descriptionlang=pt&amp;description=", ENCODE_FOR_URI (?itemLabel), ENCODE_FOR_URI (IF(BOUND(?descr),CONCAT(" - ",?descr),"")), "&amp;categories=", ENCODE_FOR_URI (?cats)) AS ?button)}
 
-      }
-    } as %results
-    WHERE {
-      INCLUDE %results
-      { ?item wdt:P2186 ?idwlm.
-        ?item wdt:P625 ?coord.}  # IDWLM
+  SERVICE wikibase:label { bd:serviceParam wikibase:language 'pt,pt-br,en'.
+                         ?class rdfs:label ?classLabel.
+                         ?tipo rdfs:label ?tipoLabel.
+                         ?item rdfs:label ?itemLabel.
+                         ?local rdfs:label ?localLabel.
+                         ?municipio rdfs:label ?municipioLabel.
+}
+}
+GROUP BY ?item ?itemLabel ?idwlm ?localLabel ?municipioLabel ?id1 ?fonte ?cat ?cats ?button ?coord
+ORDER BY ?municipioLabel ?localLabel ?itemLabel '''
 
-      OPTIONAL { ?item wdt:P31 ?tipo. FILTER ( ?tipo != wd:Q210272)} # Tipo
-      OPTIONAL { ?item wdt:P1435 ?class. } # Classificação
-      OPTIONAL { ?item wdt:P1702 ?id1. } # ID DGPC
-      OPTIONAL { ?item wdt:P1700 ?id2. } # ID SIPA
-      {BIND (CONCAT('<a href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/', ?id1, '"', '>DGPC</a>') as ?url1)}
-      {BIND (CONCAT('<a href="http://www.monumentos.gov.pt/Site/APP_PagesUser/SIPA.aspx?id=', ?id2, '"', '>SIPA</a>') as ?url2)}
-      {BIND (CONCAT(COALESCE( ?url1,''), COALESCE( CONCAT(IF (BOUND (?url1),'<br/>',''), ?url2),'')) AS ?fonte)}
-      OPTIONAL {?item wdt:P373 ?cat.}
-      {BIND (CONCAT('Images from Wiki Loves Monuments 2021 in Portugal - Aveiro',IF(BOUND(?cat),CONCAT('{{!}}',?cat),'')) AS ?cats)}
-    BIND(SUBSTR(STR(?item), 32 ) AS ?id)
-      OPTIONAL { ?item schema:description ?descr.
-      FILTER((LANG(?descr)) = 'pt') }
-      {BIND (CONCAT("https://commons.wikimedia.org/wiki/special:uploadWizard?campaign=wlm-pt&amp;id=", ?id, "&amp;descriptionlang=pt&amp;description=", ENCODE_FOR_URI (?itemLabel), ENCODE_FOR_URI (IF(BOUND(?descr),CONCAT(" - ",?descr),"")), "&amp;categories=", ENCODE_FOR_URI (?cats)) AS ?button)}
-
-      SERVICE wikibase:label { bd:serviceParam wikibase:language 'pt,pt-br,en'.
-                             ?class rdfs:label ?classLabel.
-                             ?tipo rdfs:label ?tipoLabel.
-                             ?item rdfs:label ?itemLabel.
-                             ?local rdfs:label ?localLabel.
-                             ?municipio rdfs:label ?municipioLabel.
-    }
-    }
-    GROUP BY ?item ?itemLabel ?idwlm ?localLabel ?municipioLabel ?id1 ?fonte ?cat ?cats ?button ?coord
-    ORDER BY ?municipioLabel ?localLabel ?itemLabel '''
-
-    _hmtl = '''<tr>
-            <td><a href="https://pt.wikipedia.org/wiki/{nome}">
-                {nome}</a></td>
+_hmtl = '''<tr>
+            <td><a href="https://pt.wikipedia.org/wiki/{nome_safe}">{nome}</a></td>
             <td><abbr title="{tipo}">MN</abbr></td>
-            <td><a href="https://pt.wikipedia.org/wiki/{municipio}">
-                {municipio}</a></td>
+            <td><a href="https://pt.wikipedia.org/wiki/{municipio}">{municipio}</a></td>
             <td><a title="Item no Wikidata: {wd}" href="https://www.wikidata.org/wiki/{wd}"></a></td>
             <td><a title="Localização no mapa" href="https://www.openstreetmap.org/?mlat={lat}&amp;mlon={lon}&amp;zoom=13"></a></td>
             <td><a href="{button}"></a></td>
@@ -112,26 +112,32 @@ def main(distrito):
                 {fontes}
             </td>
         </tr>'''
+tables = '''<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>WLM PT 2021: {distrito}</title>
+    <link rel="stylesheet" href="wlm-tables.css" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Classificação</th>
+            <th>Município</th>
+            <th>Wikidata</th>
+            <th>Mapa</th>
+            <th>Carrega as tuas fotos!</th>
+            <th>Fonte</th>
+        </tr>'''
 
-    tables = textwrap.dedent('''<!DOCTYPE html>
-    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>WLM PT 2021: Aveiro</title>
-        <link rel="stylesheet" href="wlm-tables.css" />
-    </head>
-    <body>
-        <table>
-            <tr>
-                <th>Nome</th>
-                <th>Classificação</th>
-                <th>Município</th>
-                <th>Wikidata</th>
-                <th>Mapa</th>
-                <th>Carrega as tuas fotos!</th>
-                <th>Fonte</th>
-            </tr>''')
+def main(distrito,tables):
+    print(distrito)
+    table = tables.format(distrito=convert(distrito))
+
+
+
 
     def get_results(endpoint_url, query):
         user_agent = "WDQS-example Python/%s.%s" % (sys.version_info[0], sys.version_info[1])
@@ -141,53 +147,60 @@ def main(distrito):
         sparql.setReturnFormat(JSON)
         return sparql.query().convert()
 
-    query = query1 + distrito + query2
+    query = query1 + distrito + query2 + distrito + query3 + distrito + query4+ distrito + query5
     results = get_results(endpoint_url, query)
-
+    print ("\n\n----",query,"\n-------\n\n")
     for result in results["results"]["bindings"]:
 
-        if result['item']['value'] not in (
-                "http://www.wikidata.org/entity/Q49330753", "http://www.wikidata.org/entity/Q9617529"):
-            print(result)
+        nome = result['itemLabel']['value']
+        nome_safe = urllib.parse.quote(result['itemLabel']['value'])
+        tipo = result['tipos']['value']
+        wd = result['item']['value'].split("/entity/")[1]
+        coord = result['coord']['value']
+        button = result['button']['value']
+        fonte = result['fonte']['value']
+        try:
+            municipio = result['municipioLabel']['value']
+        except:
+            municipio = "indefinido"
 
-            nome = result['itemLabel']['value']
-            tipo = result['tipos']['value']
-            wd = result['item']['value'].split("/entity/")[1]
-            coord = result['coord']['value']
-            button = result['button']['value']
-            fonte = result['fonte']['value']
-            try:
-                municipio = result['municipioLabel']['value']
-            except:
-                municipio = "indefinido"
-
-            button = button.replace(r"%7B%7B%21%7D%7D", "|")
-            print(nome, tipo, wd, coord, button, fonte, municipio)
+        button = button.replace(r"%7B%7B%21%7D%7D", "|")
+        print(nome, tipo, wd, coord, button, fonte, municipio)
+        try:
             _coord = coord.split("(")[1].split(")"[0])
+
 
             s = re.findall("""\((-?\d+\.\d+)\s(-?\d+\.\d+)\)""", coord)
 
             lat = s[0][1]
             lon = s[0][0]
+        except IndexError:
+            lat = 0
+            lon = 0
 
-            monumento = _hmtl.format(nome=nome, tipo=tipo, municipio=municipio, wd=wd, lat=lat, lon=lon, button=button,
-                                     fontes=fonte)
+        monumento = _hmtl.format(nome=nome, nome_safe=nome_safe, tipo=tipo, municipio=municipio, wd=wd, lat=lat,
+                                 lon=lon, button=button,
+                                 fontes=fonte)
 
-            tables = tables + monumento
+        table = table + monumento
 
     print("\n\n\n\::::\n")
-    tables = tables + textwrap.dedent('''
-        </table>
+    table = table + '''    </table>
     </body>
-    </html>''')
-    print(tables)
+    </html>'''
 
-    import os.path
-    f_name = os.path.join("pages","wlm-2021-"+convert(distrito) + ".xhtml")
-    with open(f_name, 'w') as f:
-        f.writelines(tables)
+    return distrito, table
+
+
+#    f_name = os.path.join("pages","wlm-2021-"+convert(distrito) + ".xhtml")
+#    with open(f_name, 'w') as f:
+#        f.writelines(tables)
 
 
 for i in distritos:
-    main(i)
+    distrito, tbls = main(i,tables)
+    f_name = os.path.join("pages", "wlm-2021-" + convert(distrito) + ".xhtml")
+    with open(f_name, 'w') as f:
+        f.writelines(tbls)
+
 
